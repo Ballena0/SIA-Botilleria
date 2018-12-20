@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488365c1-26a0-4b9f-b10d-d228707b7025" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/dashboard-finance.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/dashboard-influencer.html" beforeDir="false" />
@@ -25,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/influencer-finder.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/influencer-profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +84,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" lean-forward="true" selection-end-line="1" />
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,11 +124,11 @@
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/index.html" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/blank-page-header.html" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/base.html" />
-        <option value="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/templates/base.html" />
         <option value="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/views.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/urls.py" />
+        <option value="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" />
       </list>
     </option>
   </component>
@@ -246,12 +249,12 @@
       <workItem from="1544725932240" duration="619000" />
       <workItem from="1544728839853" duration="3422000" />
       <workItem from="1545267462536" duration="5716000" />
-      <workItem from="1545322709351" duration="3808000" />
+      <workItem from="1545322709351" duration="4293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62843000" />
+    <option name="totallyTimeSpent" value="63328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -415,8 +418,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-end-line="1" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
