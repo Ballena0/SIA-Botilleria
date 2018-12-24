@@ -3,7 +3,6 @@ from django.http import HttpResponse
 # Create your views here.
 from inventario.models import PRODUCTO
 
-
 def index(request):
     context = {}
     return render(request, 'base.html', context)

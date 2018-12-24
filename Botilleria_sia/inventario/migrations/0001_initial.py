@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
+import datetime
 
 
 class Migration(migrations.Migration):
@@ -16,9 +17,7 @@ class Migration(migrations.Migration):
             name='FORMATO',
             fields=[
                 ('FORMATO_ID', models.IntegerField(primary_key=True, serialize=False)),
-                ('CANTIDAD', models.IntegerField(default=0)),
-                ('CANT_P', models.IntegerField(default=0)),
-                ('TIPO_FORMATO', models.CharField(max_length=50)),
+                ('UNIDADES', models.CharField(max_length=50)),
                 ('DESCRIPCION_FOR', models.CharField(max_length=50)),
             ],
         ),
@@ -29,7 +28,6 @@ class Migration(migrations.Migration):
                 ('NOMBRE_PROD', models.CharField(max_length=50)),
                 ('PRECIO', models.IntegerField(default=0)),
                 ('STOCK', models.IntegerField(default=0)),
-                ('DESCRIPCION_PROD', models.CharField(max_length=50)),
                 ('FORM_PROD', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='inventario.FORMATO')),
             ],
         ),
