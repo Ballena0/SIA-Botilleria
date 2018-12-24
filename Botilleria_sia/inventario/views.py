@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
-from .models import *
+from .models import PRODUCTO, FORMATO
 
 
 def index(request):
     context = {}
-    return render(request, 'base.html', context)
+    return render(request, 'inventario/base.html', context)
 
 def productos(request):
     ##producto = PRODUCTO.objects.get(pk=ID_PROD)
