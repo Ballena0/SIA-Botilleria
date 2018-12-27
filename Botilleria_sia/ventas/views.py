@@ -1,9 +1,9 @@
 from django.shortcuts import render
-
 from django.http import HttpResponse
+from .models import PRODUCTO, VENTA, TIPO_PAGO
 
 def index(request):
-    return HttpResponse("Página de ventas")
+    return render(request, 'ventas/index.html')
 
 def ventas(request):
     venta = VENTA.objects.get(pk=VENTA_ID)

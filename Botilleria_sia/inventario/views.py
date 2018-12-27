@@ -8,8 +8,8 @@ def index(request):
     return render(request, 'inventario/base.html', context)
 
 def productos(request):
-    ##producto = PRODUCTO.objects.get(pk=ID_PROD)
-    ##context = {producto}
+    ## producto = PRODUCTO.objects.get(pk=ID_PROD)
+    ## context = {producto}
     return render(request, 'productos.html')
 
 def tipo_formato(request):

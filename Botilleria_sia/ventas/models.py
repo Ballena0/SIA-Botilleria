@@ -12,19 +12,19 @@ class TIPO_PAGO(models.Model):
         return (self.TIPO_PAGO)
 
 class VENTA(models.Model):
-    VENTA_ID = models.IntegerField(primary_key=True)
+    VENTA_ID = models.AutoField(primary_key=True)
     FECHA = models.DateTimeField(default=datetime.now, blank=True)
     TIPO_PAGO = models.ForeignKey(TIPO_PAGO, on_delete=models.CASCADE)
     TOTAL_A_PAGAR = models.IntegerField(default=0)
 
     def __str__(self):
-        return (str(self.FECHA)+" TOTAL = "+str(self.TOTAL_A_PAGAR))
+        return "N°"+str(self.VENTA_ID)+' '+str(self.FECHA)
 
 class DETALLE(models.Model):
     NUMERO_DE_VENTA = models.ForeignKey(VENTA, on_delete=models.CASCADE)
-    DETALLE_ID = models.IntegerField(primary_key=True)
+    DETALLE_ID = models.AutoField(primary_key=True)
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
     CANTIDAD = models.IntegerField(default=0)
 
     def __str__(self):
-        return (self.PRODUCTO.NOMBRE_PROD+" "+self.PRODUCTO.FORM_PROD.UNIDADES+" "+self.PRODUCTO.FORM_PROD.DESCRIPCION_FOR+" x "+str(self.CANTIDAD))
+        return (self.PRODUCTO.NOMBRE_PROD+" "+self.PRODUCTO.FORMAT_PROD.UNIDADES+" "+self.PRODUCTO.FORMAT_PROD.DESCRIPCION_FOR+" x "+str(self.CANTIDAD))
