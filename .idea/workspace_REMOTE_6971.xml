@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="488365c1-26a0-4b9f-b10d-d228707b7025" name="Default Changelist" comment="">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/botilleria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/botilleria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/models.py" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" afterDir="false" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html" afterDir="false" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,61 +31,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/views.py">
+        <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="60">
-              <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-=======
             <state relative-caret-position="216">
               <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/apps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="29" selection-start-column="29" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-=======
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
             <state relative-caret-position="277">
               <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
             </state>
@@ -112,63 +54,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
               <caret line="226" column="19" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/productos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-=======
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-<<<<<<< HEAD
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-<<<<<<< HEAD
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/tipoformato.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-=======
               <caret line="21" selection-start-line="21" selection-end-line="21" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-=======
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
               <caret line="3" column="37" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -245,45 +150,20 @@
         <subPane>
           <expand>
             <path>
-              <item name="SIA-Botilleria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA-Botilleria" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIA-Botilleria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA-Botilleria" type="462c0819:PsiDirectoryNode" />
-              <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-<<<<<<< HEAD
-              <item name="SIA-Botilleria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIA-Botilleria" type="462c0819:PsiDirectoryNode" />
-              <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
-              <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
-=======
               <item name="botilleria" type="b2602c69:ProjectViewProjectNode" />
               <item name="botilleria" type="462c0819:PsiDirectoryNode" />
-              <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< HEAD
             <path>
               <item name="botilleria" type="b2602c69:ProjectViewProjectNode" />
               <item name="botilleria" type="462c0819:PsiDirectoryNode" />
               <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="botilleria" type="b2602c69:ProjectViewProjectNode" />
               <item name="botilleria" type="462c0819:PsiDirectoryNode" />
               <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
               <item name="inventario" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
             </path>
-=======
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
           </expand>
           <select />
         </subPane>
@@ -293,14 +173,10 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../entorno" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-<<<<<<< HEAD
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-=======
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -370,49 +246,23 @@
       <workItem from="1544728839853" duration="3422000" />
       <workItem from="1545267462536" duration="5716000" />
       <workItem from="1545322709351" duration="4293000" />
-<<<<<<< HEAD
-      <workItem from="1545403794324" duration="376000" />
-      <workItem from="1545405285025" duration="2374000" />
-=======
       <workItem from="1545330318872" duration="2022000" />
       <workItem from="1545334739408" duration="4285000" />
       <workItem from="1545349931533" duration="3079000" />
       <workItem from="1545361287404" duration="6000" />
       <workItem from="1545605050522" duration="432000" />
-<<<<<<< HEAD
-      <workItem from="1545605521101" duration="4720000" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
       <workItem from="1545605521101" duration="6101000" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="66078000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="59" y="25" width="1307" height="743" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.20697859" />
-=======
-    <option name="totallyTimeSpent" value="77872000" />
-=======
     <option name="totallyTimeSpent" value="79253000" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-<<<<<<< HEAD
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.2195704" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.2195704" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
       <window_info id="Structure" order="1" sideWeight="0.7175" side_tool="true" weight="0.19809069" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -425,17 +275,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49960223" weight="0.32952693" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-<<<<<<< HEAD
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003978" side_tool="true" weight="0.32952693" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49960223" visible="true" weight="0.3257329" />
-=======
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119334" side_tool="true" weight="0.32626426" />
-<<<<<<< HEAD
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4988067" visible="true" weight="0.32626426" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4988067" visible="true" weight="0.32626426" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49960223" weight="0.32952693" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -479,58 +320,15 @@
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_env/lib/python3.6/site-packages/django/conf/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/Botilleria_env/lib/python3.6/site-packages/django/conf/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/index.html" />
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/blank-page-header.html" />
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/index.html" />
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/base.html" />
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14172">
-          <caret line="17" column="96" selection-start-line="17" selection-start-column="96" selection-end-line="17" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/productos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/tipoformato.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/apps.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -541,19 +339,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="60">
+          <caret line="4" column="37" lean-forward="true" selection-start-line="4" selection-end-line="5" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-=======
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/index.html" />
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/blank-page-header.html" />
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/tipoformato.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/index.html" />
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/formatocopiado/base.html" />
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/productos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/assets/libs/js/main-js.js" />
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/templates/login.html" />
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/base.html" />
@@ -587,61 +408,21 @@
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-<<<<<<< HEAD
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="227">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="e#638#670#0" expanded="true" />
-          </folding>
-=======
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
           <caret line="21" selection-start-line="21" selection-end-line="21" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-733">
-          <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-=======
         <state relative-caret-position="216">
           <caret line="122" column="23" selection-start-line="122" selection-start-column="23" selection-end-line="122" selection-end-column="23" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="105">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-=======
         <state relative-caret-position="150">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
->>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>

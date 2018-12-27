@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="488365c1-26a0-4b9f-b10d-d228707b7025" name="Default Changelist" comment="">
 <<<<<<< HEAD
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/botilleria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/botilleria.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -15,11 +14,6 @@
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" afterDir="false" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html" afterDir="false" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,23 +90,9 @@
 =======
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
             <state>
               <caret column="19" selection-start-column="19" selection-end-column="19" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-            <state relative-caret-position="277">
-              <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="226" column="19" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
             </state>
           </provider>
         </entry>
@@ -127,7 +107,6 @@
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-<<<<<<< HEAD
               <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
             </state>
@@ -149,9 +128,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" selection-start-line="28" selection-end-line="28" />
-=======
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
             </state>
           </provider>
         </entry>
@@ -174,7 +150,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -222,9 +198,8 @@
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/models.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/urls.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/views.py" />
-        <option value="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py" />
         <option value="$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Botilleria_sia/Botilleria_sia/settings.py" />
       </list>
     </option>
   </component>
@@ -265,7 +240,6 @@
               <item name="Botilleria_sia" type="462c0819:PsiDirectoryNode" />
               <item name="inventario" type="462c0819:PsiDirectoryNode" />
             </path>
-<<<<<<< HEAD
             <path>
               <item name="botilleria" type="b2602c69:ProjectViewProjectNode" />
               <item name="botilleria" type="462c0819:PsiDirectoryNode" />
@@ -282,8 +256,6 @@
               <item name="inventario" type="462c0819:PsiDirectoryNode" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
             </path>
-=======
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
           </expand>
           <select />
         </subPane>
@@ -379,17 +351,12 @@
       <workItem from="1545349931533" duration="3079000" />
       <workItem from="1545361287404" duration="6000" />
       <workItem from="1545605050522" duration="432000" />
-<<<<<<< HEAD
       <workItem from="1545605521101" duration="4720000" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-      <workItem from="1545605521101" duration="6101000" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
 <<<<<<< HEAD
     <option name="totallyTimeSpent" value="66078000" />
   </component>
@@ -399,20 +366,13 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.20697859" />
 =======
     <option name="totallyTimeSpent" value="77872000" />
-=======
-    <option name="totallyTimeSpent" value="79253000" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
-<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.2195704" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2825" visible="true" weight="0.2195704" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
       <window_info id="Structure" order="1" sideWeight="0.7175" side_tool="true" weight="0.19809069" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -430,12 +390,8 @@
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49960223" visible="true" weight="0.3257329" />
 =======
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50119334" side_tool="true" weight="0.32626426" />
-<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4988067" visible="true" weight="0.32626426" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4988067" visible="true" weight="0.32626426" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
       <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49960223" weight="0.32952693" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -587,7 +543,6 @@
     <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-<<<<<<< HEAD
           <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
         </state>
@@ -605,9 +560,6 @@
         <state>
           <caret column="19" selection-start-column="19" selection-end-column="19" />
 >>>>>>> 75f849c8789b89d2ae1d2f6ac9344debfd31440e
-=======
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
->>>>>>> dc2f62cc28befeccf5fac4c932c887c0c2cca240
         </state>
       </provider>
     </entry>
@@ -645,20 +597,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Botilleria_sia/inventario/templates/inventario/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="226" column="19" selection-start-line="226" selection-start-column="19" selection-end-line="226" selection-end-column="19" />
         </state>
       </provider>
     </entry>
