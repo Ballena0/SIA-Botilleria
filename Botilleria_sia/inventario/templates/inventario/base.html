@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <title>Inventario-Punto de Partida</title>
+  <title>Inventario|Punto de Partida</title>
 </head>
 <body>
 
   <!--=================================-->
   <!-- Nav-Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="">Punto de Partida</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="/">Punto de Partida</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,46 +24,32 @@
           <a class="nav-link" href="">Usuarios <span class="sr-only">(Current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="">Productos<span class="sr-only">(Current)</spam></a>
+          <a class="nav-link" href="/ventas">Ventas<span class="sr-only">(Current)</span></a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Ventas
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="">Realizar Venta</a>
-            <a class="dropdown-item" href="">Ventas Diarias</a>
-            <a class="dropdown-item" href="">Ventas Mensuales</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="">Ventas Anuales</a>
-          </div>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'productos'%}">Productos<span class="sr-only">(Current)</span></a>
         </li>
       </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2 form-right-top" type="search" placeholder="¿Que Buscas?" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Buscar</button>
-        </form>
     </div>
   </nav>
   <!-- End Nav-Bar -->
   <!--============================-->
   <!--============================-->
   <!--  Wrapper -->
-  {% block content %}
-  {% endblock %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        {% block content %}
+        <h1>Inventario</h1>
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
   <!-- End Wrapper -->
   <!--============================-->
   <!--============================-->
   <!-- Footer -->
-  <div class="footer">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-6">
-          hecho con <3 2018
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- End Footer -->
   <!--============================-->
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
