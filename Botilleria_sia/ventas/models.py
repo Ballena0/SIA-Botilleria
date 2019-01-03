@@ -2,8 +2,6 @@ from django.db import models
 from datetime import datetime
 from inventario.models import PRODUCTO
 
-# Create your models here.
-
 class TipoPago(models.Model):
     PAGO_ID = models.IntegerField(primary_key=True)
     TIPO_PAGO = models.CharField(max_length=50)
