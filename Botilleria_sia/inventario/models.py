@@ -27,3 +27,14 @@ class PROVEEDOR(models.Model):
 
     def __str__(self):
         return (self.NOMBRE)
+
+class RegistroBodega(models.Model):
+    REGBOD_ID = models.AutoField(primary_key=True)
+    PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
+    PROVEEDOR = models.ForeignKey(PROVEEDOR, on_delete=models.CASCADE)
+    CANTIDAD = models.IntegerField(default=0)
+    DESCRIPCION = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.PROVEEDOR.NOMBRE+'; '+self.DESCRIPCION
+

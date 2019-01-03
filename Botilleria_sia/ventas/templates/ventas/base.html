@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ventas | Punto Partida</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'ventas/style.css' %}">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Punto Partida</a>
+        <a href="/inventario">Inventario</a>
+        <a class="active" href="/ventas">Ventas</a>
+        <a href="#">Buscador</a>
+        <a href="{% url 'venta_new' %}" class="top-menu">+</a>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
