@@ -9,4 +9,3 @@ urlpatterns = [
     path('productos/', views.productos, name='productos'),
     path('tipoformato/', views.tipo_formato, name='tipoformato')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
