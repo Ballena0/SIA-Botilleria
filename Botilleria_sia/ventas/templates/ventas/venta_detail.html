@@ -3,8 +3,8 @@
 {% block content %}
      <h1><a>Ventas</a></h1>
         <div class="venta">
-            <h2>Venta N°{{ venta.VENTA_ID }} | Fecha: {{venta.FECHA}} (<a class="btn btn-default" href="{% url 'venta_edit' pk=venta.pk %}">editar</a>)</h2>
-            <p><a href="{% url 'detalle_new' %}" class="top-menu">Añadir producto a la venta</span></a><br/>
+            <h2>Venta N°{{ venta.VENTA_ID }} | Fecha: {{ venta.FECHA }} (<a class="btn btn-default" href="{% url 'venta_edit' pk=venta.pk %}">editar</a>, <a class="btn btn-default" href="{% url 'venta_delete' pk=venta.pk %}">eliminar</a>)</h2>
+            <p><a href="{% url 'detalle_new' pk=venta.pk %}" class="top-menu">Añadir producto a la venta</span></a><br/>
                 * Total a pagar: ${{ venta.TOTAL_A_PAGAR }}<br/>
                 * Atendido por: {{ venta.VENDEDOR }}<br/>
                 * Método de pago: {{ venta.TIPO_PAGO }}</p>
@@ -12,7 +12,7 @@
         <h3><a>Detalle de productos</a></h3>
         {% for detalle in detalles %}
             <div class="detalle">
-                <h4><a>{{ detalle.PRODUCTO.NOMBRE_PROD }} x {{detalle.CANTIDAD}} </a>(<a class="btn btn-default" href="{% url 'detalle_edit' pk=detalle.pk %}">editar</a>)</h4>
+                <h4><a>{{ detalle.PRODUCTO.NOMBRE_PROD }} x {{ detalle.CANTIDAD }} </a>(<a class="btn btn-default" href="{% url 'detalle_edit' pk=detalle.pk %}">editar</a>, <a class="btn btn-default" href="{% url 'detalle_delete' pk=detalle.pk %}">eliminar</a>)</h4>
                 <p>Total: ${{ detalle.TOTAL_DETALLE }}</p>
             </div>
         {% endfor %}
