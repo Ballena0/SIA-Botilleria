@@ -8,9 +8,24 @@ def index(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
     return render(request, 'ventas/index.html', {'ventas': ventas})
 
+# Todas las ventas
 def ventas(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
-    return render(request, 'ventas.html', {'ventas': ventas})
+    return render(request, 'ventas/index.html', {'ventas': ventas})
+
+# Lista de años
+def ventas_year(request):
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
+    years = []
+    for venta in ventas:
+        if venta.FECHA.year not in years:
+            years.append(venta.FECHA.year)
+    return render(request, 'ventas/ventas_year.html', locals())
+
+# Ventas por años
+def venta_year(request, year):
+    ventas = VENTA.objects.filter(FECHA__year=year).order_by('FECHA')
+    return render(request, 'ventas/venta_year.html', {'ventas': ventas})
 
 def detalles(request):
     detalle = DETALLE.objects.get(pk=DETALLE_ID)
@@ -97,3 +112,4 @@ def venta_delete(request, pk):
         return redirect('/ventas')
 
     return render(request, 'ventas/venta_delete.html', {'venta': venta})
+

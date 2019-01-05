@@ -10,13 +10,18 @@
 <meta name="robots" content="NONE,NOARCHIVE">
 </head>
 <body>
-    <div class="topnav">
-        <a href="/">Punto Partida</a>
-        <a href="/inventario">Inventario</a>
-        <a class="active" href="/ventas">Ventas</a>
-        <a href="#">Buscador</a>
-        <a href="{% url 'venta_new' %}" class="top-menu">+</a>
-    </div>
+    <ul>
+        <li><a href="/">Punto de Partida</a></li>
+        <li><a href="/inventario">Inventario</a></li>
+        <li class="dropdown">
+            <a href="/ventas" class="dropbtn">Ventas</a>
+            <div class="dropdown-content">
+                <a href="/ventas/venta/new">Añadir venta</a>
+                <a href="/ventas/year/">Ventas por año</a>
+                <a href="/ventas/month">Ventas por mes</a>
+            </div>
+        </li>
+    </ul>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
@@ -25,6 +30,13 @@
             </div>
         </div>
     </div>
+<br/><br/><br/>
 </body>
+
+<footer>
+  Sangre x sangre waton bairon (TM) 2099<br />
+  Send nudes: <a href="mailto:mariam.maldonado.marin@gmail.com">
+  here</a>.
+</footer>
 
 </html>
