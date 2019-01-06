@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ventas | Punto Partida</title>
+    <title>Ventas | Punto de Partida</title>
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'ventas/style.css' %}">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -10,18 +10,18 @@
 <meta name="robots" content="NONE,NOARCHIVE">
 </head>
 <body>
-    <ul>
-        <li><a href="/">Punto de Partida</a></li>
-        <li><a href="/inventario">Inventario</a></li>
-        <li class="dropdown">
+    <nav>
+        <nav2><a href="/">Punto de Partida</a></nav2>
+        <nav2><a href="/inventario">Inventario</a></nav2>
+        <nav2 class="dropdown">
             <a href="/ventas" class="dropbtn">Ventas</a>
             <div class="dropdown-content">
                 <a href="/ventas/venta/new">Añadir venta</a>
                 <a href="/ventas/year/">Ventas por año</a>
                 <a href="/ventas/month">Ventas por mes</a>
             </div>
-        </li>
-    </ul>
+        </nav2>
+    </nav>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">

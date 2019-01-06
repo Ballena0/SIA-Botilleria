@@ -1,12 +1,14 @@
 {% extends 'ventas/base.html' %}
 {% block content %}
 <h1><a>Ventas por mes</a></h1>
+<ul>
     {% for year in years %}
-        <h2>Año {{ year }}</h2>
+    <h2>Año {{ year }}</h2>
         {% for month in months %}
-            <div class="year">
-                <h3><a href="{% url 'venta_month' year=year month=month%}"> * {{ year }}/{{ month }}</a></h3>
-            </div>
+        <div class="year">
+            <li><a href="{% url 'venta_month' year=year month=month%}"> {{ year }}/{{ month }}</a></li>
+        </div>
         {% endfor %}
     {% endfor %}
+</ul>
 {% endblock %}

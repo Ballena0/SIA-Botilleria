@@ -27,7 +27,7 @@ class DETALLE(models.Model):
     NUMERO_DE_VENTA = models.ForeignKey(VENTA, on_delete=models.CASCADE)
     DETALLE_ID = models.AutoField(primary_key=True)
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
-    CANTIDAD = models.IntegerField(default=0)
+    CANTIDAD = models.IntegerField(default=1)
     TOTAL_DETALLE = models.IntegerField(default=0)
 
     def totald(self):

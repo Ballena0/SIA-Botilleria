@@ -1,4 +1,5 @@
-ul {
+/* Barra de navegación */
+nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -10,11 +11,11 @@ ul {
   font-family: Arial;
 }
 
-li {
+nav2 {
   float: left;
 }
 
-li a, .dropbtn {
+nav2 a, .dropbtn {
   display: inline-block;
   color: White;
   text-align: center;
@@ -22,12 +23,12 @@ li a, .dropbtn {
   text-decoration: none;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+nav2 a:hover, .dropdown:hover .dropbtn {
   background-color: Silver;
   color: Black;
 }
 
-li.dropdown {
+nav2.dropdown {
   display: inline-block;
 }
 
@@ -53,7 +54,7 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
+/* Fondo */
 body {
   background-color: lightblue;
 }
@@ -61,25 +62,25 @@ body {
 h1 {
   color: Black;
   text-align: left;
-  font-family: Arial;
+  font-family: "Ubuntu Light";
 }
 
 h2 {
   color: Black;
   text-align: left;
-  font-family: Arial;
+  font-family: "Ubuntu Light";
 }
 
 h3 {
   color: Black;
   text-align: left;
-  font-family: Arial;
+  font-family: "Ubuntu Light";
 }
 
 h4 {
   color: Black;
   text-align: left;
-  font-family: Arial;
+  font-family: "Ubuntu Light";
 }
 
 p {
@@ -87,19 +88,34 @@ p {
   font-size: 15px;
 }
 
+/* Pie de página */
 footer {
   display: block;
-  position: sticky;
+  position: fixed;
   font-family: Ubuntu;
   font-size: 10px;
-  right: -8px;
-  bottom: -8px;
-  left: -8px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   padding: 1rem;
   background-color: White;
   text-align: center;
 }
 
+/* Enlace a */
+a {
+  text-decoration: none;
+}
+
+/* Botón */
+
+Button {
+  font-family: Ubuntu;
+  font-size: 15px;
+  color: initial;
+}
+
+/* Botón a*/
 a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
@@ -107,4 +123,29 @@ a.button {
 
     text-decoration: none;
     color: initial;
+}
+
+/* Tablas */
+table, th, td {
+  border: 1px solid DarkSlateGray;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  font-family: Ubuntu;
+  font-size: 20x;
+}
+
+li {
+  font-family: Ubuntu;
+}
+
+/* Tabla detalle */
+table.tabled, th.tabled, td.tabled {
+  border: 0px;
+  border-collapse: collapse;
+  font-size: 15px;
+  font-family: Ubuntu;
 }

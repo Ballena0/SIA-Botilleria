@@ -5,34 +5,34 @@ from .models import DETALLE, VENTA, TipoPago
 from .forms import VentaForm, DetalleForm
 
 def index(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     return render(request, 'ventas/index.html', {'ventas': ventas})
 
 # Todas las ventas
 def ventas(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     return render(request, 'ventas/index.html', {'ventas': ventas})
 
 # Lista de meses
 def ventas_month(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     years = []
     for venta in ventas:
         if venta.FECHA.year not in years:
             years.append(venta.FECHA.year)
-    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 11, 12]
+    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     return render(request, 'ventas/ventas_month.html', locals())
 
 # Ventas por meses
 def venta_month(request, year, month):
-    ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month).order_by('-FECHA')
     year = year
     month = month
     return render(request, 'ventas/venta_month.html', locals())
 
 # Lista de años
 def ventas_year(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     years = []
     for venta in ventas:
         if venta.FECHA.year not in years:
@@ -41,7 +41,7 @@ def ventas_year(request):
 
 # Ventas por años
 def venta_year(request, year):
-    ventas = VENTA.objects.filter(FECHA__year=year).order_by('FECHA')
+    ventas = VENTA.objects.filter(FECHA__year=year).order_by('-FECHA')
     year = year
     return render(request, 'ventas/venta_year.html', locals())
 
