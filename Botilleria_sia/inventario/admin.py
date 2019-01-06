@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import FORMATO, PRODUCTO, PROVEEDOR
+from .models import FORMATO, PRODUCTO, PROVEEDOR, RegistroBodega
 
 class FormatoAdmin(admin.ModelAdmin):
     fields = ['UNIDADES', 'DESCRIPCION_FOR']
@@ -21,3 +21,9 @@ class ProveedorAdmin(admin.ModelAdmin):
     list_display = ('NOMBRE', 'RUT', 'TELEFONO')
 
 admin.site.register(PROVEEDOR, ProveedorAdmin)
+
+class RegistroAdmin(admin.ModelAdmin):
+    fields = ['PRODUCTO', 'PROVEEDOR', 'CANTIDAD', 'DESCRIPCION']
+    list_display = ('DESCRIPCION', 'REGBOD_ID', 'PROVEEDOR', 'PRODUCTO', 'CANTIDAD')
+
+admin.site.register(RegistroBodega, RegistroAdmin)

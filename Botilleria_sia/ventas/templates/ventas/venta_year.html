@@ -1,0 +1,10 @@
+{% extends 'ventas/base.html' %}
+{% block content %}
+<h1><a>Ventas del año {{ year }}</a></h1>
+    {% for venta in ventas %}
+        <div class="venta">
+            <h3><a href="{% url 'venta_detail' pk=venta.pk %}">N°{{ venta.VENTA_ID }} | {{ venta.FECHA }}</a></h3>
+            <p>Total a pagar: ${{ venta.TOTAL_A_PAGAR }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

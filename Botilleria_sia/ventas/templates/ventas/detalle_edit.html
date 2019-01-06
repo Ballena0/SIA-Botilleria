@@ -1,0 +1,11 @@
+{% extends 'ventas/base.html' %}
+
+{% block content %}
+    <h1>Añadir producto a venta</h1>
+    <form method="POST" class="detalle-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Aceptar</button>
+        <button type="button" onclick="window.history.back()">Cancelar</button>
+</form>
+    </form>
+{% endblock %}
