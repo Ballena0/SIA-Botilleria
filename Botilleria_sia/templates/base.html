@@ -1,0 +1,51 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> {{ nompag }} | Punto de Partida</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body>
+    <nav>
+        <nav1><a href="/">Punto de Partida</a></nav1>
+        <nav2>
+            <a href="#">Usuarios</a>
+        </nav2>
+        <nav2 class="dropdown">
+            <a href="/inventario" class="dropbtn">Inventario</a>
+            <div class="dropdown-content">
+                <a href="/inventario">Wea1</a>
+                <a href="/inventario">Wea2</a>
+            </div>
+        </nav2>
+        <nav2 class="dropdown">
+            <a href="/ventas" class="dropbtn">Ventas</a>
+            <div class="dropdown-content">
+                <a href="/ventas/venta/new">Añadir venta</a>
+                <a href="/ventas/year/">Ventas por año</a>
+                <a href="/ventas/month">Ventas por mes</a>
+            </div>
+        </nav2>
+    </nav>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+<br/><br/><br/>
+</body>
+
+<footer>
+  Sangre x sangre waton bairon (TM) 2099<br />
+  Send nudes: <a href="mailto:mariam.maldonado.marin@gmail.com">here<3</a>
+</footer>
+
+</html>

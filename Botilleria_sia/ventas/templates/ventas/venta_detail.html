@@ -1,4 +1,4 @@
-{% extends 'ventas/base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
 <h1><a>Ventas</a></h1>
@@ -9,26 +9,32 @@
         <li>Total a pagar: ${{ venta.TOTAL_A_PAGAR }}</li>
         <li>Atendido por: {{ venta.VENDEDOR }}</li>
         <li>Método de pago: {{ venta.TIPO_PAGO }}</li>
+        <li>Estado: {% if venta.estado %} Pago realizado {% else %} Pago no realizado {% endif %} </li>
     </ul>
 </div>
 <h3><a>Detalle de productos</a></h3>
 <p><a href="{% url 'detalle_new' pk=venta.pk %}" class="button">+ Añadir producto</a></p>
-<table class="tabled" style="width:50%" align="left">
-    <tr class="tabled">
-        <th class="tabled">Producto</th>
-        <th class="tabled">Precio</th>
-        <th class="tabled">Cantidad</th>
-        <th class="tabled">Total</th>
-        <th class="tabled"> </th>
-    </tr>
-    {% for detalle in detalles %}
-    <tr class="tabled">
-        <td class="tabled">{{ detalle.PRODUCTO.NOMBRE_PROD }}</td>
-        <td class="tabled">${{ detalle.PRODUCTO.PRECIO }}</td>
-        <td class="tabled">x{{ detalle.CANTIDAD }}</td>
-        <td class="tabled">${{ detalle.TOTAL_DETALLE }}</td>
-        <td class="tabled"><a class="button" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a><a class="button" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a></td>
-    </tr>
-    {% endfor %}
-</table>
+{% if detalles %}
+    <table class="tabled" style="width:50%" align="left">
+        <tr class="tabled">
+            <th class="tabled">Producto</th>
+            <th class="tabled">Precio</th>
+            <th class="tabled">Cantidad</th>
+            <th class="tabled">Total</th>
+            <th class="tabled"> </th>
+        </tr>
+        {% for detalle in detalles %}
+        <tr class="tabled">
+            <td class="tabled">{{ detalle.PRODUCTO.NOMBRE_PROD }}</td>
+            <td class="tabled">${{ detalle.PRODUCTO.PRECIO }}</td>
+            <td class="tabled">x{{ detalle.CANTIDAD }}</td>
+            <td class="tabled">${{ detalle.TOTAL_DETALLE }}</td>
+            <td class="tabled"><a class="button" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a><a class="button" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="#" class="button">Pago realizado</a></p>
+{% else %}
+    <p>No hay productos actualmente ingresados en esta venta.</p>
+{% endif %}
 {% endblock %}

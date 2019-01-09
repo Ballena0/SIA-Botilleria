@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a>Pedidos</a></h1>
+<div class="pedido">
+    <h2>Pedido N°{{ pedido.PEDIDO_ID }} | Fecha: {{ pedido.FECHA }}</h2>
+    <p><a class="button" href="{% url 'pedido_edit' pk=pedido.pk %}">Editar</a><a class="button" href="{% url 'pedido_delete' pk=pedido.pk %}">Eliminar</a></p>
+    <ul>
+        <li>Proveedor: {{ pedido.PROVEEDOR }}</li>
+        <li>Ingresado por: {{ pedido.INGRESADO_POR }}</li>
+    </ul>
+</div>
+<h3><a>Productos ingresados</a></h3>
+<p><a href="{% url 'ingreso_new' pk=pedido.pk %}" class="button">+ Añadir producto</a></p>
+{% if ingresos %}
+    <table class="tabled" style="width:50%" align="left">
+        <tr class="tabled">
+            <th class="tabled">Producto</th>
+            <th class="tabled">Cantidad</th>
+            <th class="tabled">Descripción</th>
+            <th class="tabled"> </th>
+        </tr>
+        {% for ingreso in ingresos %}
+        <tr class="tabled">
+            <td class="tabled">{{ ingreso.PRODUCTO.NOMBRE_PROD }}
+            <td class="tabled">x{{ ingreso.CANTIDAD }}</td>
+            <td class="tabled">${{ ingreso.DESCRIPCION }}</td>
+            <td class="tabled"><a class="button" href="{% url 'ingreso_edit' pk=ingreso.pk %}">Editar</a><a class="button" href="{% url 'ingreso_delete' pk=ingreso.pk %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No hay productos en este ingreso de bodega.</p>
+{% endif %}
+{% endblock %}

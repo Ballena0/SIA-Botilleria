@@ -15,9 +15,14 @@ class VENTA(models.Model):
     TIPO_PAGO = models.ForeignKey(TipoPago, on_delete=models.CASCADE)
     VENDEDOR = models.CharField(max_length=50)
     TOTAL_A_PAGAR = models.IntegerField(default=0)
+    ESTADO = models.BooleanField(default=False)
 
     def totalv(self):
         self.TOTAL_A_PAGAR = sum(DETALLE.objects.values_list('TOTAL_DETALLE', flat=True).filter(NUMERO_DE_VENTA=self.VENTA_ID))
+        self.save()
+
+    def estado(self):
+        self.ESTADO = True
         self.save()
 
     def __str__(self):

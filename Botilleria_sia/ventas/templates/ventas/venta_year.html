@@ -1,22 +1,26 @@
-{% extends 'ventas/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 <h1><a>Ventas del año {{ year }}</a></h1>
-<table style="width:80%" align="center">
-    <tr>
-        <th>N°</th>
-        <th>Fecha</th>
-        <th>Monto</th>
-        <th>Tipo de pago</th>
-        <th>Vendedor</th>
-    </tr>
-    {% for venta in ventas %}
-    <tr>
-        <td>{{ venta.VENTA_ID }}</td>
-        <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA }}</a></td>
-        <td>${{ venta.TOTAL_A_PAGAR }}</td>
-        <td>{{ venta.TIPO_PAGO }}</td>
-        <td>{{ venta.VENDEDOR }}</td>
-    </tr>
-    {% endfor %}
-</table>
+{% if ventas %}
+    <table style="width:80%" align="center">
+        <tr>
+            <th>N°</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Tipo de pago</th>
+            <th>Vendedor</th>
+        </tr>
+        {% for venta in ventas %}
+        <tr>
+            <td>{{ venta.VENTA_ID }}</td>
+            <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA }}</a></td>
+            <td>${{ venta.TOTAL_A_PAGAR }}</td>
+            <td>{{ venta.TIPO_PAGO }}</td>
+            <td>{{ venta.VENDEDOR }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+<p>No hay ventas registradas para el año {{ year }}.</p>
+{% endif %}
 {% endblock %}
