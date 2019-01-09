@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>¿Eliminar pedido?</h1>
+    <form method="POST" class="pedido-form">{% csrf_token %}
+        <p>
+        Pedido N°{{ pedido.PEDIDO_ID }} | Fecha: {{ pedido.FECHA }}<br />
+        Proveedor: {{ pedido.PROVEEDOR }}<br/>
+        Presione 'aceptar' para eliminar el pedido <br/>
+        {{ form.as_p }}</p>
+        <button type="submit" class="save btn btn-default">Aceptar</button>
+        <button type="button" onclick="window.history.back()">Cancelar</button>
+</form>
+    </form>
+{% endblock %}

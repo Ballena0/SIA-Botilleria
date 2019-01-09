@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import FORMATO, PRODUCTO, PROVEEDOR, RegistroBodega
+from .models import FORMATO, PRODUCTO, PROVEEDOR, Pedido, IngresoProducto
 
 class FormatoAdmin(admin.ModelAdmin):
     fields = ['UNIDADES', 'DESCRIPCION_FOR']
@@ -22,8 +22,14 @@ class ProveedorAdmin(admin.ModelAdmin):
 
 admin.site.register(PROVEEDOR, ProveedorAdmin)
 
-class RegistroAdmin(admin.ModelAdmin):
-    fields = ['PRODUCTO', 'PROVEEDOR', 'CANTIDAD', 'DESCRIPCION']
-    list_display = ('DESCRIPCION', 'REGBOD_ID', 'PROVEEDOR', 'PRODUCTO', 'CANTIDAD')
+class PedidoAdmin(admin.ModelAdmin):
+    fields = ['PROVEEDOR', 'FECHA', 'INGRESADO_POR']
+    list_display = ('PROVEEDOR', 'FECHA', 'INGRESADO_POR')
 
-admin.site.register(RegistroBodega, RegistroAdmin)
+admin.site.register(Pedido, PedidoAdmin)
+
+class IngresoAdmin(admin.ModelAdmin):
+    fields = ['NUMPEDIDO', 'PRODUCTO', 'CANTIDAD', 'DESCRIPCION']
+    list_display = ('NUMPEDIDO', 'PRODUCTO', 'CANTIDAD', 'DESCRIPCION')
+
+admin.site.register(IngresoProducto, IngresoAdmin)

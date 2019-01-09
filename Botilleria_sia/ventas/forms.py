@@ -9,5 +9,5 @@ class VentaForm(forms.ModelForm):
 class DetalleForm(forms.ModelForm):
     class Meta:
         model = DETALLE
-        fields = ('NUMERO_DE_VENTA', 'PRODUCTO', 'CANTIDAD')
+        fields = ('PRODUCTO', 'CANTIDAD',)
 

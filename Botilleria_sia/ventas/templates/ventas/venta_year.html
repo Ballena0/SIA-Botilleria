@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1><a>Ventas</a></h1>
+<h1><a>Ventas del año {{ year }}</a></h1>
 {% if ventas %}
     <table style="width:80%" align="center">
         <tr>
@@ -21,6 +21,6 @@
         {% endfor %}
     </table>
 {% else %}
-<p>No hay ventas registradas actualmente.</p>
+<p>No hay ventas registradas para el año {{ year }}.</p>
 {% endif %}
 {% endblock %}

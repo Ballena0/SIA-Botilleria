@@ -3,8 +3,8 @@ from django.contrib import admin
 from .models import VENTA, TipoPago, DETALLE
 
 class VentaAdmin(admin.ModelAdmin):
-    fields = ['FECHA', 'TIPO_PAGO', 'VENDEDOR', 'TOTAL_A_PAGAR']
-    list_display = ('FECHA', 'VENTA_ID', 'TIPO_PAGO', 'VENDEDOR', 'TOTAL_A_PAGAR')
+    fields = ['FECHA', 'TIPO_PAGO', 'VENDEDOR', 'TOTAL_A_PAGAR', 'ESTADO']
+    list_display = ('FECHA', 'VENTA_ID', 'TIPO_PAGO', 'VENDEDOR', 'TOTAL_A_PAGAR', 'ESTADO')
 
 admin.site.register(VENTA, VentaAdmin)
 

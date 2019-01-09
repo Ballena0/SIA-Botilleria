@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a>Pedidos</a></h1>
+<p><a class="button" href="{% url 'pedido_new' %}">+ Ingresar pedido</a></p>
+{% if pedidos %}
+    <table style="width:80%" align="center">
+        <tr>
+            <th>N°</th>
+            <th>Fecha</th>
+            <th>Proveedor</th>
+            <th>Ingresado por</th>
+        </tr>
+        {% for pedido in pedidos %}
+        <tr>
+            <td>{{ pedido.PEDIDO_ID }}</td>
+            <td><a href="{% url 'pedido_detail' pk=pedido.pk %}">{{ pedido.FECHA }}<a/></td>
+            <td>{{ pedido.PROVEEDOR }}</td>
+            <td>{{ pedido.INGRESADO_POR }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+<p>No hay pedidos registrados.</p>
+{% endif %}
+{% endblock %}

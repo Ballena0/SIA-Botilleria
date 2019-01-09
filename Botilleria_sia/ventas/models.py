@@ -2,8 +2,6 @@ from django.db import models
 from datetime import datetime
 from inventario.models import PRODUCTO
 
-# Create your models here.
-
 class TipoPago(models.Model):
     PAGO_ID = models.IntegerField(primary_key=True)
     TIPO_PAGO = models.CharField(max_length=50)
@@ -17,9 +15,14 @@ class VENTA(models.Model):
     TIPO_PAGO = models.ForeignKey(TipoPago, on_delete=models.CASCADE)
     VENDEDOR = models.CharField(max_length=50)
     TOTAL_A_PAGAR = models.IntegerField(default=0)
+    ESTADO = models.BooleanField(default=False)
 
     def totalv(self):
         self.TOTAL_A_PAGAR = sum(DETALLE.objects.values_list('TOTAL_DETALLE', flat=True).filter(NUMERO_DE_VENTA=self.VENTA_ID))
+        self.save()
+
+    def estado(self):
+        self.ESTADO = True
         self.save()
 
     def __str__(self):
@@ -29,7 +32,7 @@ class DETALLE(models.Model):
     NUMERO_DE_VENTA = models.ForeignKey(VENTA, on_delete=models.CASCADE)
     DETALLE_ID = models.AutoField(primary_key=True)
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
-    CANTIDAD = models.IntegerField(default=0)
+    CANTIDAD = models.IntegerField(default=1)
     TOTAL_DETALLE = models.IntegerField(default=0)
 
     def totald(self):

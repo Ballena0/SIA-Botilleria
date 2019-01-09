@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -28,13 +29,27 @@ class PROVEEDOR(models.Model):
     def __str__(self):
         return (self.NOMBRE)
 
-class RegistroBodega(models.Model):
-    REGBOD_ID = models.AutoField(primary_key=True)
-    PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
+class Pedido(models.Model):
+    PEDIDO_ID = models.AutoField(primary_key=True)
     PROVEEDOR = models.ForeignKey(PROVEEDOR, on_delete=models.CASCADE)
-    CANTIDAD = models.IntegerField(default=0)
-    DESCRIPCION = models.CharField(max_length=100)
+    FECHA = models.DateTimeField(default=datetime.now, blank=True)
+    INGRESADO_POR = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.PROVEEDOR.NOMBRE+'; '+self.DESCRIPCION
+        return "N°"+str(self.PEDIDO_ID)+' '+str(self.FECHA)
+
+class IngresoProducto(models.Model):
+    IP_ID = models.AutoField(primary_key=True)
+    NUMPEDIDO = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
+    CANTIDAD = models.IntegerField(default=1)
+    DESCRIPCION = models.CharField(max_length=100)
+
+    def stockp(self):
+        if PRODUCTO.ID_PROD == self.PRODUCTO.ID_PROD:
+            PRODUCTO.STOCK = PRODUCTO.STOCK+self.CANTIDAD
+        self.save()
+
+    def __str__(self):
+        return self.PRODUCTO.NOMBRE_PROD+'; '+self.DESCRIPCION
 

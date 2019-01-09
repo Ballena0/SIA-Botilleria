@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a>Stock de productos</a></h1>
+{% if productos %}
+    <table style="width:80%" class="table-bordered" id="stock">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.ID_PROD }}</td>
+                <td><a href="#">{{ producto.NOMBRE_PROD }}<a/></td>
+                <td>{{ producto.STOCK }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $("#stock").dataTable();
+    });
+    </script>
+{% else %}
+<p>No hay productos.</p>
+{% endif %}
+
+{% endblock %}

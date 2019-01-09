@@ -7,17 +7,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<<<<<<< HEAD
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <title>Inventario|Punto de Partida</title>
+=======
+  <title>Inventario-Punto de Partida</title>
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
 </head>
 <body>
+
   <!--=================================-->
   <!-- Nav-Bar -->
+<<<<<<< HEAD
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <a class="navbar-brand" href="/">Punto de Partida</a>
     <button class="navbar-toggler" type="button" -->
   <data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+=======
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="">Punto de Partida</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,8 +38,9 @@
           <a class="nav-link" href="">Usuarios <span class="sr-only">(Current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/ventas">Ventas<span class="sr-only">(Current)</span></a>
+          <a class="nav-link" href="">Productos<span class="sr-only">(Current)</spam></a>
         </li>
+<<<<<<< HEAD
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'productos'%}">Productos<span class="sr-only">(Current)</span></a>
         </li>
@@ -38,12 +50,32 @@
           <a class="nav-link" href=""><i class="fas fa-sign-out-alt"></i></a>
         </li>
       </ul>
+=======
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Ventas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="">Realizar Venta</a>
+            <a class="dropdown-item" href="">Ventas Diarias</a>
+            <a class="dropdown-item" href="">Ventas Mensuales</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">Ventas Anuales</a>
+          </div>
+        </li>
+      </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2 form-right-top" type="search" placeholder="¿Que Buscas?" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-2" type="submit">Buscar</button>
+        </form>
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
     </div>
   </nav>
   <!-- End Nav-Bar -->
   <!--============================-->
   <!--============================-->
   <!--  Wrapper -->
+<<<<<<< HEAD
   <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -62,25 +94,42 @@
     </div>
   </div>
 
+=======
+  {% block content %}
+  {% endblock %}
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
   <!-- End Wrapper -->
   <!--============================-->
   <!--============================-->
   <!-- Footer -->
+<<<<<<< HEAD
   <footer class="footer">
+=======
+  <div class="footer">
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6">
-          Hecho con <3 2018
+          hecho con <3 2018
         </div>
       </div>
     </div>
+<<<<<<< HEAD
   </footer>
   <!-- End Footer -->  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
 
   <!--============================-->
 
 
+=======
+  </div>
+  <!-- End Footer -->
+  <!--============================-->
+<script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
 </body>
+
+<<<<<<< HEAD
+=======
 </html>
-
-
+>>>>>>> 3cca787ad7885c2b51fefa93d11bddf3c168b115
