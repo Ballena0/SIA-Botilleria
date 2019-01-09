@@ -147,28 +147,3 @@ a.button {
     text-decoration: none;
     color: initial;
 }
-
-/* Tablas */
-table, th, td {
-  border: 1px solid DarkSlateGray;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 5px;
-  text-align: left;
-  font-family: Ubuntu;
-  font-size: 20x;
-}
-
-li {
-  font-family: Ubuntu;
-}
-
-/* Tabla detalle */
-table.tabled, th.tabled, td.tabled {
-  border: 0px;
-  border-collapse: collapse;
-  font-size: 15px;
-  font-family: Ubuntu;
-}

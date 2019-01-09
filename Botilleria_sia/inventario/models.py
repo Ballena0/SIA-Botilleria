@@ -47,7 +47,7 @@ class IngresoProducto(models.Model):
 
     def stockp(self):
         if PRODUCTO.ID_PROD == self.PRODUCTO.ID_PROD:
-            self.PRODUCTO.STOCK = self.CANTIDAD
+            PRODUCTO.STOCK = PRODUCTO.STOCK+self.CANTIDAD
         self.save()
 
     def __str__(self):

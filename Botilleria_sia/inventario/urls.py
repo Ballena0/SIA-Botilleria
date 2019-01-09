@@ -13,4 +13,5 @@ urlpatterns = [
     path('ingreso/new/<int:pk>', views.ingreso_new, name='ingreso_new'),
     path('ingreso/<int:pk>/edit/', views.ingreso_edit, name='ingreso_edit'),
     path('ingreso/<int:pk>/delete/', views.ingreso_delete, name='ingreso_delete'),
+    path('productos/stock/', views.productos_stock, name='productos_stock'),
 ]

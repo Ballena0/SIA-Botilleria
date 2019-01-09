@@ -16,6 +16,12 @@ def tipo_formato(request):
     context = {}
     return render(request,'inventario/tipoformato.html', context)
 
+# Productos por stock
+def productos_stock(request):
+    productos = PRODUCTO.objects.order_by('STOCK')
+    nompag = 'Stock de productos'
+    return render(request, 'inventario/productos_stock.html', locals())
+
 # Todos los pedidos
 def pedidos(request):
     pedidos = Pedido.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
