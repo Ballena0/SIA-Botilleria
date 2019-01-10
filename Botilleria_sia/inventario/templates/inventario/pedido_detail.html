@@ -3,16 +3,17 @@
 <h1><a>Pedidos</a></h1>
 <div class="pedido">
     <h2>Pedido N°{{ pedido.PEDIDO_ID }} | Fecha: {{ pedido.FECHA }}</h2>
-    <p><a class="button" href="{% url 'pedido_edit' pk=pedido.pk %}">Editar</a><a class="button" href="{% url 'pedido_delete' pk=pedido.pk %}">Eliminar</a></p>
+    <a type="button" class="btn btn-success btn-sm" href="{% url 'pedido_edit' pk=pedido.pk %}">Editar</a>
+    <a type="button" class="btn btn-danger btn-sm" href="{% url 'pedido_delete' pk=pedido.pk %}">Eliminar</a>
     <ul>
         <li>Proveedor: {{ pedido.PROVEEDOR }}</li>
         <li>Ingresado por: {{ pedido.INGRESADO_POR }}</li>
     </ul>
 </div>
 <h3><a>Productos ingresados</a></h3>
-<p><a href="{% url 'ingreso_new' pk=pedido.pk %}" class="button">+ Añadir producto</a></p>
+<p><a type="button" class="btn btn-primary btn-sm" href="{% url 'ingreso_new' pk=pedido.pk %}">+ Añadir producto</a></p>
 {% if ingresos %}
-    <table class="tabled" style="width:50%" align="left">
+    <table class="tabled" style="width:80%" align="left">
         <tr class="tabled">
             <th class="tabled">Producto</th>
             <th class="tabled">Cantidad</th>
@@ -23,8 +24,11 @@
         <tr class="tabled">
             <td class="tabled">{{ ingreso.PRODUCTO.NOMBRE_PROD }}
             <td class="tabled">x{{ ingreso.CANTIDAD }}</td>
-            <td class="tabled">${{ ingreso.DESCRIPCION }}</td>
-            <td class="tabled"><a class="button" href="{% url 'ingreso_edit' pk=ingreso.pk %}">Editar</a><a class="button" href="{% url 'ingreso_delete' pk=ingreso.pk %}">Eliminar</a></td>
+            <td class="tabled">{{ ingreso.DESCRIPCION }}</td>
+            <td class="tabled">
+                <a type="button" class="btn btn-outline-success btn-sm" href="{% url 'ingreso_edit' pk=ingreso.pk %}">Editar</a>
+                <a type="button" class="btn btn-outline-danger btn-sm" href="{% url 'ingreso_delete' pk=ingreso.pk %}">Eliminar</a>
+            </td>
         </tr>
         {% endfor %}
     </table>

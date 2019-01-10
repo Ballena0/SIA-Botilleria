@@ -1,114 +1,38 @@
 /* Barra de navegación */
-nav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #191930;
-  margin-top: -8px;
-  margin-right: -8px;
-  margin-left: -8px;
-  font-family: Arial;
-}
-
-nav1 {
-  float: left;
-  font-size: 110%;
-}
-
-nav1 a, .dropbtn {
-  display: inline-block;
-  color: White;
-  text-align: center;
-  padding: 1rem;
-  text-decoration: none;
-}
-
-nav1 a:hover, .dropdown:hover .dropbtn {
-  color: Orange;
-  transition-duration: 0.5s;
-}
-
-nav2 {
-  float: left;
-  font-size: 110%;
-}
-
-nav2 a, .dropbtn {
-  display: inline-block;
-  color: White;
-  text-align: center;
-  padding: 1rem;
-  text-decoration: none;
-  transition-duration: 0.5s;
-}
-
-nav2 a:hover, .dropdown:hover {
-  color: Orange;
+.dropdown:hover {
   background-color: #2e1760;
   cursor: pointer;
-}
-
-nav2.dropdown {
-  display: inline-block;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: White;
+  background-color: #2e1760;
   min-width: 160px;
   z-index: 1;
 }
 
 .dropdown-content a {
-  color: Black;
+  color: #dee2e6;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: 90%;
 }
 
 .dropdown-content a:hover {
-  background-color: Orange;
-  color: Black;
+  background-color: #2e1760;
+  color: White;
+  text-decoration: none;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Fondo */
-body {
-  background-color: #dff3e4;
-}
-
-h1 {
-  color: Black;
-  text-align: left;
-  font-family: "Ubuntu Light";
-}
-
-h2 {
-  color: Black;
-  text-align: left;
-  font-family: "Ubuntu Light";
-}
-
-h3 {
-  color: Black;
-  text-align: left;
-  font-family: "Ubuntu Light";
-}
-
-h4 {
-  color: Black;
-  text-align: left;
-  font-family: "Ubuntu Light";
-}
-
-p {
-  font-family: Ubuntu;
-  font-size: 15px;
+/* Enlaces */
+a {
+  text-decoration: none;
 }
 
 /* Pie de página */
@@ -123,11 +47,6 @@ footer {
   padding: 1rem;
   background-color: #dff3e4;
   text-align: center;
-}
-
-/* Enlace a */
-a {
-  text-decoration: none;
 }
 
 /* Botón */

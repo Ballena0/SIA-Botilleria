@@ -4,7 +4,8 @@
 <h1><a>Ventas</a></h1>
 <div class="venta">
     <h2>Venta N°{{ venta.VENTA_ID }} | Fecha: {{ venta.FECHA }}</h2>
-    <p><a class="button" href="{% url 'venta_edit' pk=venta.pk %}">Editar</a><a class="button" href="{% url 'venta_delete' pk=venta.pk %}">Eliminar</a></p>
+    <a type="button" class="btn btn-success btn-sm" href="{% url 'venta_edit' pk=venta.pk %}">Editar</a>
+    <a type="button" class="btn btn-danger btn-sm" href="{% url 'venta_delete' pk=venta.pk %}">Eliminar</a>
     <ul>
         <li>Total a pagar: ${{ venta.TOTAL_A_PAGAR }}</li>
         <li>Atendido por: {{ venta.VENDEDOR }}</li>
@@ -13,9 +14,9 @@
     </ul>
 </div>
 <h3><a>Detalle de productos</a></h3>
-<p><a href="{% url 'detalle_new' pk=venta.pk %}" class="button">+ Añadir producto</a></p>
+<p><a type="button" class="btn btn-primary btn-sm" href="{% url 'detalle_new' pk=venta.pk %}">+ Añadir producto</a></p>
 {% if detalles %}
-    <table class="tabled" style="width:50%" align="left">
+    <table class="tabled" style="width:80%" align="left">
         <tr class="tabled">
             <th class="tabled">Producto</th>
             <th class="tabled">Precio</th>
@@ -29,11 +30,14 @@
             <td class="tabled">${{ detalle.PRODUCTO.PRECIO }}</td>
             <td class="tabled">x{{ detalle.CANTIDAD }}</td>
             <td class="tabled">${{ detalle.TOTAL_DETALLE }}</td>
-            <td class="tabled"><a class="button" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a><a class="button" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a></td>
+            <td class="tabled">
+                <a type="button" class="btn btn-outline-success btn-sm" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a>
+                <a type="button" class="btn btn-outline-danger btn-sm" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
-    <p><a href="#" class="button">Pago realizado</a></p>
+    <br />
 {% else %}
     <p>No hay productos actualmente ingresados en esta venta.</p>
 {% endif %}
