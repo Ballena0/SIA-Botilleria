@@ -29,7 +29,7 @@ class PedidoAdmin(admin.ModelAdmin):
 admin.site.register(Pedido, PedidoAdmin)
 
 class IngresoAdmin(admin.ModelAdmin):
-    fields = ['NUMPEDIDO', 'PRODUCTO', 'CANTIDAD', 'DESCRIPCION']
-    list_display = ('NUMPEDIDO', 'PRODUCTO', 'CANTIDAD', 'DESCRIPCION')
+    fields = ['NUMPEDIDO', 'PRODUCTO', 'CANTIDAD']
+    list_display = ('NUMPEDIDO', 'PRODUCTO', 'CANTIDAD')
 
 admin.site.register(IngresoProducto, IngresoAdmin)

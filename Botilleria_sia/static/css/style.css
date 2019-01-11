@@ -1,3 +1,14 @@
+/* Colores para textos importantes */
+rojo {
+  font-weight: bold;
+  color: Red;
+}
+
+verde {
+  font-weight: bold;
+  color: Green;
+}
+
 /* Barra de navegación */
 .dropdown:hover {
   background-color: #2e1760;
@@ -45,7 +56,7 @@ footer {
   bottom: 0px;
   left: 0px;
   padding: 1rem;
-  background-color: #dff3e4;
+  background-color: White;
   text-align: center;
 }
 

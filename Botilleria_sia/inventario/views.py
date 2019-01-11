@@ -64,6 +64,19 @@ def pedido_detail(request, pk):
     nompag = 'Pedido N° '+str(pedido.PEDIDO_ID)
     return render(request, 'inventario/pedido_detail.html', locals())
 
+# Confirma el ingreso y bloquea los botones de edición
+def pedido_ingresado(request, pk):
+    pedido = get_object_or_404(Pedido, pk=pk)
+    ingresos = IngresoProducto.objects.filter(NUMPEDIDO=pedido.PEDIDO_ID)
+    pedido.estado()
+    for ingreso in ingresos:
+        if ingreso.ESTADO == False:
+            ingreso.stockp()
+            ingreso.ESTADO = True
+            ingreso.save()
+    nompag = 'Pedido N° ' + str(pedido.PEDIDO_ID)
+    return render(request, 'inventario/pedido_detail.html', locals())
+
 # Elimina un pedido
 def pedido_delete(request, pk):
     pedido = get_object_or_404(Pedido, pk=pk)
@@ -82,6 +95,7 @@ def ingreso_new(request, pk):
         if form.is_valid():
             ingreso = form.save(commit=False)
             ingreso.NUMPEDIDO = Pedido.objects.get(PEDIDO_ID=pk)
+            ingreso.stockp()
             ingreso.save()
             return redirect('pedido_detail', pk=ingreso.NUMPEDIDO.PEDIDO_ID)
     else:
@@ -111,5 +125,4 @@ def ingreso_delete(request, pk):
         ingreso.delete()
         return redirect('pedido_detail', pk=prikey)
     nompag = 'Eliminar ingreso'
-
     return render(request, 'inventario/ingreso_delete.html', locals())

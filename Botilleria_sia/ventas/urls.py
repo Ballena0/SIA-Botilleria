@@ -9,6 +9,7 @@ urlpatterns = [
     path('month/', views.ventas_month, name='ventas_month'),
     path('year/<int:year>/month/<int:month>', views.venta_month, name='venta_month'),
     path('venta/<int:pk>/', views.venta_detail, name='venta_detail'),
+    path('venta/<int:pk>/pago-realizado', views.venta_pago, name='venta_pago'),
     path('venta/new', views.venta_new, name='venta_new'),
     path('detalle/new/<int:pk>', views.detalle_new, name='detalle_new'),
     path('detalle/<int:pk>/edit/', views.detalle_edit, name='detalle_edit'),

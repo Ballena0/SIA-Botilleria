@@ -1,20 +1,26 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <h1><a>Ventas</a></h1>
 <div class="venta">
-    <h2>Venta N°{{ venta.VENTA_ID }} | Fecha: {{ venta.FECHA }}</h2>
+    <h3>Venta N°{{ venta.VENTA_ID }} | Fecha: {{ venta.FECHA }}</h3>
+    {% if venta.ESTADO == False %}
     <a type="button" class="btn btn-success btn-sm" href="{% url 'venta_edit' pk=venta.pk %}">Editar</a>
     <a type="button" class="btn btn-danger btn-sm" href="{% url 'venta_delete' pk=venta.pk %}">Eliminar</a>
+    {% endif %}
     <ul>
         <li>Total a pagar: ${{ venta.TOTAL_A_PAGAR }}</li>
         <li>Atendido por: {{ venta.VENDEDOR }}</li>
         <li>Método de pago: {{ venta.TIPO_PAGO }}</li>
-        <li>Estado: {% if venta.estado %} Pago realizado {% else %} Pago no realizado {% endif %} </li>
+        <li>Estado: {% if venta.ESTADO == True %} <verde>Pago realizado</verde> {% else %} <rojo>Pago no realizado</rojo> {% endif %} </li>
     </ul>
+    {% if venta.ESTADO == False %}
+    <p><a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_pago' pk=venta.pk %}">Confirmar pago</a></p>
+    {% endif %}
 </div>
-<h3><a>Detalle de productos</a></h3>
-<p><a type="button" class="btn btn-primary btn-sm" href="{% url 'detalle_new' pk=venta.pk %}">+ Añadir producto</a></p>
+<h4><a>Detalle de productos</a></h4>
+{% if venta.ESTADO == False %}
+    <p><a type="button" class="btn btn-primary btn-sm" href="{% url 'detalle_new' pk=venta.pk %}">+ Añadir producto</a></p>
+{% endif %}
 {% if detalles %}
     <table class="tabled" style="width:80%" align="left">
         <tr class="tabled">
@@ -31,8 +37,10 @@
             <td class="tabled">x{{ detalle.CANTIDAD }}</td>
             <td class="tabled">${{ detalle.TOTAL_DETALLE }}</td>
             <td class="tabled">
-                <a type="button" class="btn btn-outline-success btn-sm" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a>
-                <a type="button" class="btn btn-outline-danger btn-sm" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a>
+                {% if detalle.ESTADO == False %}
+                    <a type="button" class="btn btn-outline-success btn-sm" href="{% url 'detalle_edit' pk=detalle.pk %}">Editar</a>
+                    <a type="button" class="btn btn-outline-danger btn-sm" href="{% url 'detalle_delete' pk=detalle.pk %}">Eliminar</a>
+                {% endif %}
             </td>
         </tr>
         {% endfor %}

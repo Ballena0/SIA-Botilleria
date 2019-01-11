@@ -3,14 +3,14 @@
 <h1><a>Ventas</a></h1>
 <a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_new' %}">+ Ingresar venta</a>
 {% if ventas %}
-    <table class="table-bordered" id="vs">
+    <table class="table table-striped table-hover table-sm" id="vs">
         <thead>
             <tr>
-                <th>N°</th>
-                <th>Fecha</th>
-                <th>Monto</th>
-                <th>Tipo de pago</th>
-                <th>Vendedor</th>
+                <th class="th-sm">N°</th>
+                <th class="th-sm">Fecha</th>
+                <th class="th-sm">Monto</th>
+                <th class="th-sm">Tipo de pago</th>
+                <th class="th-sm">Vendedor</th>
             </tr>
         </thead>
         <tbody>
