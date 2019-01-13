@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="robots" content="NONE,NOARCHIVE">
 </head>
-<body>
+<body class="fondo-blur">
     <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="https://datatables.net/download/build/nightly/jquery.dataTables.js"></script>
 
@@ -21,7 +21,10 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Punto de Partida</a>
+        <a class="navbar-brand" href="#">
+            <img src="/static/img/pp.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            Punto de Partida
+        </a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="dropdown">
@@ -52,20 +55,18 @@
     </nav>
     <div class="content container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" style="background-color: #ffffff">
             {% block content %}
             {% endblock %}
             </div>
         </div>
     </div>
-<br/><br/><br/>
+    <br/><br/><br/>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 </body>
-
 <footer>
-  Sangre x sangre waton bairon (TM) 2099<br />
-  Send nudes: <a href="mailto:mariam.maldonado.marin@gmail.com">here<3</a>
-</footer>
-
+        Sangre x sangre waton bairon (TM) 2099<br />
+        Send nudes: <a href="mailto:mariam.maldonado.marin@gmail.com">here<3</a>
+    </footer>
 </html>
