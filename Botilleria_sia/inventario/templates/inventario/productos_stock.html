@@ -2,7 +2,7 @@
 {% block content %}
 <h1><a>Stock de productos</a></h1>
 {% if productos %}
-    <table style="width:80%" class="table-bordered" id="stock">
+    <table class="table table-striped table-hover table-sm" id="stock">
         <thead>
             <tr>
                 <th>ID</th>
@@ -15,7 +15,15 @@
             <tr>
                 <td>{{ producto.ID_PROD }}</td>
                 <td><a href="#">{{ producto.NOMBRE_PROD }}<a/></td>
-                <td>{{ producto.STOCK }}</td>
+                <td>
+                    {% if producto.STOCK < 11 %}
+                    <rojo>{{ producto.STOCK }}</rojo>
+                    {% elif producto.STOCK > 10 and producto.STOCK < 50 %}
+                    <naranjo>{{ producto.STOCK }}</naranjo>
+                    {% else %}
+                    <verde>{{ producto.STOCK }}</verde>
+                    {% endif %}
+                </td>
             </tr>
             {% endfor %}
         </tbody>

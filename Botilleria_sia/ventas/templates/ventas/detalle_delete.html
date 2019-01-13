@@ -8,8 +8,7 @@
         Monto a pagar: ${{ detalle.TOTAL_DETALLE }}<br/>
         Presione 'aceptar' para eliminar el producto de la lista de venta<br/>
         {{ form.as_p }}</p>
-        <button type="submit" class="save btn btn-default">Aceptar</button>
-        <button type="button" onclick="window.history.back()">Cancelar</button>
-</form>
+        <button type="submit" class="btn btn-outline-success btn-sm">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" onclick="window.history.back()">Cancelar</button>
     </form>
 {% endblock %}

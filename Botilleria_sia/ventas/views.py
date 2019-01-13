@@ -58,6 +58,19 @@ def venta_detail(request, pk):
     venta.totalv()
     return render(request, 'ventas/venta_detail.html', locals())
 
+# Confirma el pago de una venta y bloquea los botones de edición
+def venta_pago(request, pk):
+    venta = get_object_or_404(VENTA, pk=pk)
+    detalles = DETALLE.objects.filter(NUMERO_DE_VENTA=venta.VENTA_ID)
+    venta.estado()
+    for detalle in detalles:
+        if detalle.ESTADO == False:
+            detalle.stockd()
+            detalle.ESTADO = True
+            detalle.save()
+    nompag = 'Venta N° ' + str(venta.VENTA_ID)
+    return render(request, 'ventas/venta_detail.html', locals())
+
 # Crear una nueva venta
 def venta_new(request):
     if request.method == "POST":

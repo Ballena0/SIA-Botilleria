@@ -34,10 +34,16 @@ class DETALLE(models.Model):
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
     CANTIDAD = models.IntegerField(default=1)
     TOTAL_DETALLE = models.IntegerField(default=0)
+    ESTADO = models.BooleanField(default=False)
 
     def totald(self):
         self.TOTAL_DETALLE = self.CANTIDAD*self.PRODUCTO.PRECIO
         self.save()
+
+    def stockd(self):
+        producto = self.PRODUCTO
+        producto.STOCK = producto.STOCK - self.CANTIDAD
+        producto.save()
 
     def __str__(self):
         return (self.PRODUCTO.NOMBRE_PROD+" "+self.PRODUCTO.FORMAT_PROD.UNIDADES+" "+self.PRODUCTO.FORMAT_PROD.DESCRIPCION_FOR+" x "+str(self.CANTIDAD))

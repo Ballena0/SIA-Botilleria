@@ -34,6 +34,11 @@ class Pedido(models.Model):
     PROVEEDOR = models.ForeignKey(PROVEEDOR, on_delete=models.CASCADE)
     FECHA = models.DateTimeField(default=datetime.now, blank=True)
     INGRESADO_POR = models.CharField(max_length=50)
+    ESTADO = models.BooleanField(default=False)
+
+    def estado(self):
+        self.ESTADO = True
+        self.save()
 
     def __str__(self):
         return "N°"+str(self.PEDIDO_ID)+' '+str(self.FECHA)
@@ -43,13 +48,12 @@ class IngresoProducto(models.Model):
     NUMPEDIDO = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
     CANTIDAD = models.IntegerField(default=1)
-    DESCRIPCION = models.CharField(max_length=100)
+    ESTADO = models.BooleanField(default=False)
 
     def stockp(self):
-        if PRODUCTO.ID_PROD == self.PRODUCTO.ID_PROD:
-            PRODUCTO.STOCK = PRODUCTO.STOCK+self.CANTIDAD
-        self.save()
+        producto = self.PRODUCTO
+        producto.STOCK = producto.STOCK + self.CANTIDAD
+        producto.save()
 
     def __str__(self):
-        return self.PRODUCTO.NOMBRE_PROD+'; '+self.DESCRIPCION
-
+        return self.PRODUCTO.NOMBRE_PROD+' x'+self.CANTIDAD
