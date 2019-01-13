@@ -13,15 +13,15 @@
         </tr>
     </thead>
     <tbody>
-    {% for item in show_id %}
+        {% for item in show_id %}
         <tr>
-            <td>{{ item.field1 }}</td>
-            <td>{{ item.field2 }}</td>
-            <td>{{ item.field3 }}</td>
-            <td>{{ item.field4 }}</td>
-            <td>{{ item.field5 }}</td>
+            <td>{{ item.ID_PROD }}</td>
+            <td>{{ item.NOMBRE_PROD}}</td>
+            <td>{{ item.FORMAT_PROD }}</td>
+            <td>{{ item.PRECIO }}</td>
+            <td>{{ item.STOCK }}</td>
         </tr>
-    {% endfor %}
+        {% endfor %}
     </tbody>
 
 </table>

@@ -4,7 +4,7 @@ from .models import PRODUCTO, Pedido, IngresoProducto
 from .forms import PedidoForm, IngresoForm
 from django.http import HttpResponse
 # Create your views here.
-from .models import PRODUCTO, PROVEEDOR, RegistroBodega
+from .models import PRODUCTO, PROVEEDOR
 
 def index(request):
     context = {}

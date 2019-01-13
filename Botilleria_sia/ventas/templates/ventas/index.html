@@ -14,7 +14,7 @@
         <tr>
             <td>{{ venta.VENTA_ID }}</td>
             <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA }}</a></td>
-            <td>${{ venta.TOTAL_A_PAGAR }}</td>
+            <td>{{ venta.TOTAL_A_PAGAR }}</td>
             <td>{{ venta.TIPO_PAGO }}</td>
             <td>{{ venta.VENDEDOR }}</td>
         </tr>
