@@ -68,40 +68,30 @@ footer {
 }
 
 /* Fondo */
-.fondo-blur{
+.parallax {
   position: relative;
-  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/static/img/background.jpg);
+  min-height: 100%;
 }
 
-.fondo-blur::before{
+.parallax::before{
   content: '';
   display: block;
   background: inherit;
-  position: absolute;
+  position: fixed;
   width: 100%; height: 100%;
   left: 0; top: 0;
   filter: blur(15px);
   transform: scale(1.2,1.4);
 }
 
-html, body {
-  overflow: auto;
+body, html {
+  height: 100%;
   margin: 0;
 }
 
-html {
-  margin: 0px;
-  height: 100%;
-  width: 100%;
-}
-
-body{
-  background-image: url(/static/img/background.jpg);
-  min-height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  margin-top: 0px;
-  padding-top: 0px;
-}
+body {}
