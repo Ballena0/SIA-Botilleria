@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a>Ventas por día</a></h1>
+<a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_day' year=hoy.year month=hoy.month day=hoy.day %}">Ventas del día de hoy</a>
+<div id="menu">
+    {% for year in years %}
+    <a class="bold">Año {{ year }}</a><br />
+    <div style="display: none">
+        {% for month in months %}
+        &nbsp;<a>
+            {% if month == 1 %}
+                Enero
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 2 %}
+                Febrero
+                {% if year|divisibleby:4 %}
+                    {% for day in veintinueve %}
+                    <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                    {% endfor %}
+                {% else %}
+                    {% for day in veintiocho %}
+                    <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                    {% endfor %}
+                {% endif %}
+            {% elif month == 3 %}
+                Marzo
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 4 %}
+                Abril
+                {% for day in treinta %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 5 %}
+                Mayo
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 6 %}
+                Junio
+                {% for day in treinta %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 7 %}
+                Julio
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 8 %}
+                Agosto
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 9 %}
+                Septiembre
+                {% for day in treinta %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 10 %}
+                Octubre
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% elif month == 11 %}
+                Noviembre
+                {% for day in treinta %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% else %}
+                Diciembre
+                {% for day in treintayuno %}
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }}</a>
+                {% endfor %}
+            {% endif %}
+        </a><br />
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+<script type="text/javascript">
+$('#menu > a').click(function(){
+    $(this).next().next().slideToggle();
+    return false;
+});
+</script>
+{% endblock %}

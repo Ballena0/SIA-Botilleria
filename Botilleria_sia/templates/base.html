@@ -30,17 +30,19 @@
                 <li class="dropdown">
                     <a class="nav-link" href="/inventario">Inventario</a>
                     <div class="dropdown-content">
+                        <a href="/inventario/productos/nuevoprod">Nuevos</a>
                         <a href="/inventario/productos">Productos</a>
                         <a href="/inventario/productos/stock/">Stock</a>
                         <a href="/inventario/pedidos/">Bodega</a>
                     </div>
-                </li >
+                </li>
                 <li class="dropdown">
                     <a class="nav-link" href="/ventas">Ventas</a>
                     <div class="dropdown-content">
                         <a href="/ventas/venta/new">Añadir venta</a>
-                        <a href="/ventas/year/">Ventas por año</a>
+                        <a href="/ventas/day">Ventas por día</a>
                         <a href="/ventas/month">Ventas por mes</a>
+                        <a href="/ventas/year/">Ventas por año</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -55,9 +57,9 @@
     </nav>
     <div class="content container">
         <div class="row">
-            <div class="col-md-8" style="background-color: #ffffff">
-            {% block content %}
-            {% endblock %}
+            <div class="col-md-8" style="background-color: #ffffff; margin: auto;">
+                {% block content %}
+                {% endblock %}
             </div>
         </div>
     </div>

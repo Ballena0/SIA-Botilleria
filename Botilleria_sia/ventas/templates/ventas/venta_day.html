@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1><a>Ventas del día {{ day }}/{{ month }}/{{ year }}</a></h1>
+{% if ventas %}
+    <table class="table-bordered" id="vday">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Fecha</th>
+                <th>Monto</th>
+                <th>Tipo de pago</th>
+                <th>Vendedor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for venta in ventas %}
+            <tr>
+                <td>{{ venta.VENTA_ID }}</td>
+                <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA }}</a></td>
+                <td>${{ venta.TOTAL_A_PAGAR }}</td>
+                <td>{{ venta.TIPO_PAGO }}</td>
+                <td>{{ venta.VENDEDOR }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#vday').dataTable( {
+            language: {
+                loadingRecords: "Cargando...",
+                lengthMenu: "Mostrar _MENU_ elementos",
+                info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ elementos",
+                infoEmpty: "Mostrando 0 a 0 de un total de 0 elementos",
+                infoFiltered: "(filtrado de _MAX_ elementos en total)",
+                paginate: {
+                    first:      "Primero",
+                    previous:   "Anterior",
+                    next:       "Siguiente",
+                    last:       "Último"
+                },
+                zeroRecords: "No se han encontrado resultados",
+                search: "Buscar&nbsp;:",
+            }
+        } );
+    } );
+    </script>
+{% else %}
+    <p>No hay ventas registradas para este día.</p>
+{% endif %}
+{% endblock %}

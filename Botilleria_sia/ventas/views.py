@@ -14,6 +14,31 @@ def ventas(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     return render(request, 'ventas/index.html', {'ventas': ventas})
 
+# Ventas por días
+def ventas_day(request):
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
+    years = []
+    for venta in ventas:
+        if venta.FECHA.year not in years:
+            years.append(venta.FECHA.year)
+    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    treintayuno = range(1, 32)
+    treinta = range(1, 31)
+    veintiocho = range(1, 29)
+    veintinueve = range(1, 30)
+    hoy = datetime.today()
+    nompag = 'Ventas por día'
+    return render(request, 'ventas/ventas_day.html', locals())
+
+# Ventas por día
+def venta_day(request, year, month, day):
+    ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month, FECHA__day=day).order_by('-FECHA')
+    year = year
+    month = month
+    day = day
+    nompag = 'Ventas por día'
+    return render(request, 'ventas/venta_day.html', locals())
+
 # Lista de meses
 def ventas_month(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
