@@ -13,6 +13,11 @@ verde {
   font-weight: bold;
   color: Green;
 }
+.bold {
+  font-weight: bold;
+  font-size: 110%;
+  cursor: pointer;
+}
 
 /* Barra de navegación */
 .dropdown:hover {
@@ -60,7 +65,7 @@ footer {
   right: 0;
   font-family: Ubuntu;
   font-size: 10px;
-  padding: 1rem;
+  padding: 10px;
   background-color: White;
   text-align: center;
   clear: both;
@@ -68,39 +73,23 @@ footer {
 }
 
 /* Fondo */
-.fondo-blur{
+.parallax {
   position: relative;
-  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/static/img/background6.jpg);
+  min-height: 100%;
 }
 
-.fondo-blur::before{
+.parallax::before{
   content: '';
   display: block;
   background: inherit;
   position: fixed;
   width: 100%; height: 100%;
   left: 0; top: 0;
-  filter: blur(15px);
+  filter: blur(2px);
   transform: scale(1.2,1.4);
-}
-
-html, body {
-  overflow: auto;
-  margin: 0;
-}
-
-body, html {
-  margin: 0px;
-  width: 100%;
-}
-
-body{
-  background-image: url(/static/img/background.jpg);
-  min-height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: absolute;
-  margin-top: 0px;
-  padding-top: 0px;
 }
