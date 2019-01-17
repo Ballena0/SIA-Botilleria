@@ -10,6 +10,7 @@
             <th scope="col">Formato</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
+            <th scope="col">Accion</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,7 @@
             <td>{{ item.FORMAT_PROD }}</td>
             <td>{{ item.PRECIO }}</td>
             <td>{{ item.STOCK }}</td>
+            <td><button class="btn-warning"><a href="{% url 'producto_delete' pk=item.pk %}">Eliminar</a></button></td>
         </tr>
         {% endfor %}
     </tbody>

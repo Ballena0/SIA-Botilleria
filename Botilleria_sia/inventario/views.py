@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from datetime import datetime
 from .models import PRODUCTO, Pedido, IngresoProducto
-from .forms import PedidoForm, IngresoForm
+from .forms import PedidoForm, IngresoForm, NewProductoForm
 from django.http import HttpResponse
 # Create your views here.
 from .models import PRODUCTO, PROVEEDOR
@@ -11,8 +11,18 @@ def index(request):
     return render(request, 'base.html', context)
 
 def productos(request):
-    show_id= PRODUCTO.objects.all()
+    show_id = PRODUCTO.objects.all()
     return render(request, 'inventario/productos.html', {'show_id': show_id})
+
+def new_producto(request):
+    if request.method == 'POST':
+        form = NewProductoForm(request.POST)
+        if form.is_valid():
+            nuevo = form.save(commit=False)
+            nuevo.save()
+            return redirect('productos')
+    nompag = "Productos nuevos"
+    return render(request, 'inventario/new_producto.html', locals())
 
 def tipo_formato(request):
     context = {}
@@ -89,6 +99,15 @@ def pedido_delete(request, pk):
 
     return render(request, 'inventario/pedido_delete.html', locals())
 
+
+def producto_delete(request, pk):
+    producto = get_object_or_404(PRODUCTO, pk=pk)
+    if request.method == 'POST':
+        producto.delete()
+        return redirect('productos')
+    nompag = 'Eliminar producto'
+    return render(request, 'inventario/producto_delete.html', locals())
+
 # Añadir un ingreso de producto
 def ingreso_new(request, pk):
     pedido = get_object_or_404(Pedido, pk=pk)
@@ -128,3 +147,4 @@ def ingreso_delete(request, pk):
         return redirect('pedido_detail', pk=prikey)
     nompag = 'Eliminar ingreso'
     return render(request, 'inventario/ingreso_delete.html', locals())
+

@@ -15,3 +15,8 @@ class ProductoForm(forms.ModelForm):
     class Meta:
         model = PRODUCTO
         fields = ('FORMAT_PROD', 'NOMBRE_PROD', 'PRECIO',)
+
+class NewProductoForm(forms.ModelForm):
+    class Meta:
+        model = PRODUCTO
+        fields = ('FORMAT_PROD', 'NOMBRE_PROD', 'PRECIO',)
