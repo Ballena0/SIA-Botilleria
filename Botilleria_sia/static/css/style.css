@@ -68,17 +68,12 @@ footer {
 }
 
 /* Fondo */
-.parallax {
+.fondo-blur{
   position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(/static/img/background.jpg);
-  min-height: 100%;
+  overflow: hidden;
 }
 
-.parallax::before{
+.fondo-blur::before{
   content: '';
   display: block;
   background: inherit;
@@ -89,9 +84,23 @@ footer {
   transform: scale(1.2,1.4);
 }
 
-body, html {
-  height: 100%;
+html, body {
+  overflow: auto;
   margin: 0;
 }
 
-body {}
+body, html {
+  margin: 0px;
+  width: 100%;
+}
+
+body{
+  background-image: url(/static/img/background.jpg);
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  margin-top: 0px;
+  padding-top: 0px;
+}
