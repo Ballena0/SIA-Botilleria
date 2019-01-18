@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>¿Eliminar producto?</h1>
+    <form method="post" class="producto-form">{% csrf_token %}
+        <br>
+            Codigo {{producto.ID_PROD}} | {{producto.NOMBRE_PROD}} </br>
+            Formato de {{producto.FORMAT_PROD}} </br>
+            Presione 'Aceptar' para eliminar producto.
+            {{form.as_p}}
+        </p>
+        <button type="submit" class="btn btn-outline-success btn-sm">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" onclick="window.history.back()">Cancelar</button>
+
+    </form>
+
+{% endblock %}

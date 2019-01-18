@@ -2,20 +2,34 @@
 
 {% block content %}
 <h1>Lista de productos disponibles</h1>
-<table class="table-bordered">
+<table class="table-bordered" id="kk">
     <thead>
         <tr>
             <th scope="col">Codigo</th>
             <th scope="col">Nombre</th>
             <th scope="col">Formato</th>
+            <th scope="col">Precio</th>
             <th scope="col">Stock</th>
+            <th scope="col">Accion</th>
         </tr>
-    <tbody>
-    <th scope="row">1</th>
-    <td>1</td>
-    <td>lo</td>
-    <td>a</td>
-    </tbody>
     </thead>
+    <tbody>
+        {% for item in show_id %}
+        <tr>
+            <td>{{ item.ID_PROD }}</td>
+            <td>{{ item.NOMBRE_PROD}}</td>
+            <td>{{ item.FORMAT_PROD }}</td>
+            <td>{{ item.PRECIO }}</td>
+            <td>{{ item.STOCK }}</td>
+            <td><button class="btn-warning"><a href="{% url 'producto_delete' pk=item.pk %}">Eliminar</a></button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
 </table>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#kk').DataTable();
+} );
+</script>
 {% endblock %}

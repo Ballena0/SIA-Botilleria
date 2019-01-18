@@ -9,7 +9,7 @@ class FORMATO(models.Model):
     DESCRIPCION_FOR = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.UNIDADES+' '+self.DESCRIPCION_FOR
+        return self.UNIDADES +' '+self.DESCRIPCION_FOR
 
 class PRODUCTO(models.Model):
     FORMAT_PROD = models.ForeignKey(FORMATO, on_delete=models.CASCADE)
@@ -47,13 +47,18 @@ class IngresoProducto(models.Model):
     IP_ID = models.AutoField(primary_key=True)
     NUMPEDIDO = models.ForeignKey(Pedido, on_delete=models.CASCADE)
     PRODUCTO = models.ForeignKey(PRODUCTO, on_delete=models.CASCADE)
-    CANTIDAD = models.IntegerField(default=1)
+    CANTIDAD = models.IntegerField(default=0)
     ESTADO = models.BooleanField(default=False)
 
     def stockp(self):
         producto = self.PRODUCTO
+        if (self.CANTIDAD%2 == 0):
+            self.CANTIDAD = self.CANTIDAD/2
+        else:
+            self.CANTIDAD = self.CANTIDAD/2 + 1
+
         producto.STOCK = producto.STOCK + self.CANTIDAD
         producto.save()
 
     def __str__(self):
-        return self.PRODUCTO.NOMBRE_PROD+' x'+self.CANTIDAD
+        return self.PRODUCTO.NOMBRE_PROD +' x' + self.CANTIDAD
