@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Editar precio Producto</h1>
+    <form method="post" class="producto-form">{% csrf_token %}
+        <br>
+        Producto {{ producto.NOMBRE_PROD }} | Codigo {{ producto.ID_PROD }} </br>
+        {{ form.as_p }}
+        Presione 'Aceptar' para cambiar el precio de este producto.
+        </p>
+        <button type="submit" class="btn btn-outline-success btn-sm">Aceptar</button>
+        <button type="button" class="btn btn-outline-danger btn-sm" onclick="window.history.back()">Cancelar</button>
+    </form>
+
+
+{% endblock %}

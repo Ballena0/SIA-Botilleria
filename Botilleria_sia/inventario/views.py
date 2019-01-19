@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from datetime import datetime
 from .models import PRODUCTO, Pedido, IngresoProducto
-from .forms import PedidoForm, IngresoForm, NewProductoForm
+from .forms import PedidoForm, IngresoForm, NewProductoForm, EditProductoForm, NuevoFormatoForm, NuevoProveedorForm
 from django.http import HttpResponse
 # Create your views here.
 from .models import PRODUCTO, PROVEEDOR
@@ -10,10 +10,13 @@ def index(request):
     context = {}
     return render(request, 'base.html', context)
 
+#Lista de productos existentes
 def productos(request):
     show_id = PRODUCTO.objects.all()
-    return render(request, 'inventario/productos.html', {'show_id': show_id})
+    nompag = 'Productos'
+    return render(request, 'inventario/productos.html', locals())
 
+#Nuevo producto
 def new_producto(request):
     if request.method == 'POST':
         form = NewProductoForm(request.POST)
@@ -24,9 +27,16 @@ def new_producto(request):
     nompag = "Productos nuevos"
     return render(request, 'inventario/new_producto.html', locals())
 
+#Nuevo tipo de formato
 def tipo_formato(request):
-    context = {}
-    return render(request,'inventario/tipoformato.html', context)
+    if request.method == 'POST':
+        form = NuevoFormatoForm(request.POST)
+        if form.is_valid():
+            hola = form.save(commit=False)
+            hola.save()
+            return redirect('productos')
+    nompag = "Nuevo formato"
+    return render(request,'inventario/tipoformato.html', locals())
 
 # Productos por stock
 def productos_stock(request):
@@ -99,7 +109,7 @@ def pedido_delete(request, pk):
 
     return render(request, 'inventario/pedido_delete.html', locals())
 
-
+##Eliminar producto del sistema
 def producto_delete(request, pk):
     producto = get_object_or_404(PRODUCTO, pk=pk)
     if request.method == 'POST':
@@ -107,6 +117,16 @@ def producto_delete(request, pk):
         return redirect('productos')
     nompag = 'Eliminar producto'
     return render(request, 'inventario/producto_delete.html', locals())
+
+def precio_edit(request, pk):
+    producto = get_object_or_404(PRODUCTO, pk=pk)
+    if request.method == 'POST':
+        form = EditProductoForm (request.POST, instance=producto)
+        if form.is_valid():
+            producto = form.save(commit=False)
+            form.save()
+            return redirect('productos')
+    return render(request, 'inventario/edit_producto.html', locals())
 
 # Añadir un ingreso de producto
 def ingreso_new(request, pk):
@@ -147,4 +167,15 @@ def ingreso_delete(request, pk):
         return redirect('pedido_detail', pk=prikey)
     nompag = 'Eliminar ingreso'
     return render(request, 'inventario/ingreso_delete.html', locals())
+
+#Ingresar un nuevo proveedor
+def prov_new(request):
+    if request.method == 'POST':
+        form = NuevoProveedorForm(request.POST)
+        if form.is_valid():
+            prov = form.save(commit=False)
+            prov.save()
+            return redirect('productos')
+    nompag = " Nuevo proveedor"
+    return render(request, 'inventario/new_proveedor.html', locals())
 
