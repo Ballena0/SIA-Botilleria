@@ -20,8 +20,15 @@
             <td>{{ item.NOMBRE_PROD}}</td>
             <td>{{ item.FORMAT_PROD }}</td>
             <td>{{ item.PRECIO }}</td>
-            <td>{{ item.STOCK }}</td>
-            <td><button class="btn-warning"><a href="{% url 'producto_delete' pk=item.pk %}">Eliminar</a></button></td>
+            <td>{% if item.STOCK < 11 %}
+                    <rojo>{{ item.STOCK }}</rojo>
+                    {% elif item.STOCK > 10 and item.STOCK < 50 %}
+                    <naranjo>{{ item.STOCK }}</naranjo>
+                    {% else %}
+                    <verde>{{ item.STOCK }}</verde>
+                    {% endif %}</td>
+            <td><button class="btn-warning"><a href="{% url 'producto_delete' pk=item.pk %}">Eliminar</a></button><button class="btn-secondary">
+                <a href="{% url 'precio_edit' pk=item.pk %}">Editar</a></button></td>
         </tr>
         {% endfor %}
     </tbody>

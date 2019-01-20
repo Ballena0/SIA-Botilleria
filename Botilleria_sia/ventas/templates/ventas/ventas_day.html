@@ -11,7 +11,7 @@
             {% if month == 1 %}
                 Enero
                 {% for day in treintayuno %}
-                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }} </a>|
+                <a href="{% url 'venta_day' year=year month=month day=day %}"> {{ day }} </a>
                 {% endfor %}
             {% elif month == 2 %}
                 Febrero
