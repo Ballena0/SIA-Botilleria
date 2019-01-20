@@ -2,7 +2,7 @@
 {% block content %}
 <h1><a>Ventas del mes {{ year }}/{{ month }}</a></h1>
 {% if ventas %}
-    <table class="table-bordered" id="vmes">
+    <table class="table table-striped table-hover table-sm" id="vmes">
         <thead>
             <tr>
                 <th>N°</th>
@@ -16,7 +16,7 @@
             {% for venta in ventas %}
             <tr>
                 <td>{{ venta.VENTA_ID }}</td>
-                <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA }}</a></td>
+                <td><a href="{% url 'venta_detail' pk=venta.pk %}">{{ venta.FECHA}} a las {{ venta.HORA }}</a></td>
                 <td>${{ venta.TOTAL_A_PAGAR }}</td>
                 <td>{{ venta.TIPO_PAGO }}</td>
                 <td>{{ venta.VENDEDOR }}</td>
@@ -25,12 +25,101 @@
         </tbody>
     </table>
     <script type="text/javascript">
-        $(document).ready( function () {
-            $("#vmes").dataTable();
-    });
+    $(document).ready(function() {
+        $('#vmes').dataTable( {
+            language: {
+                'url': '//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
+            }
+        } );
+    } );
+    </script>
+    <h5>Estadísticas del mes</h5>
+    <canvas id="chartventas" width="100%" height="50%"></canvas>
+    <p class="font-weight-bold">La recaudación de este periodo de tiempo corresponde a: <verde>${{ rec }}</verde></p>
+    <canvas id="chartingresos" width="100%" height="50%"></canvas>
+    <script>
+        var dias = JSON.parse("{{ dias }}");
+        var numventas = JSON.parse("{{ numventas }}");
+        var ctx = document.getElementById('chartventas').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: dias,
+                datasets: [{
+                    label: "Ventas",
+                    backgroundColor: 'rgba(46, 23, 96, 0.25)',
+                    borderColor: '#191930',
+                    data: numventas,
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Número de ventas'
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Días del mes'
+                        }
+                    }],
+                }
+            }
+        });
+    </script>
+    <script>
+        var dias = JSON.parse("{{ dias }}");
+        var ingresos = JSON.parse("{{ ingresos }}");
+        var ctx = document.getElementById('chartingresos').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: dias,
+                datasets: [{
+                    label: "Ingresos",
+                    backgroundColor: 'rgba(255, 69, 0, 0.25)',
+                    borderColor: '#ff4500',
+                    data: ingresos
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            // Include a dollar sign in the ticks
+                            callback: function(value, index, values) {
+                                return '$' + value;
+                            }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Ingresos (en pesos)'
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Días del mes'
+                        }
+                    }],
+                }
+            }
+        });
     </script>
 {% else %}
     <p>No hay ventas registradas para este periodo de tiempo.</p>
 {% endif %}
-
 {% endblock %}

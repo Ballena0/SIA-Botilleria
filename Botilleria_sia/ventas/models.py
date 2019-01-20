@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime
+from datetime import date, datetime
 from inventario.models import PRODUCTO
 
 class TipoPago(models.Model):
@@ -11,7 +11,8 @@ class TipoPago(models.Model):
 
 class VENTA(models.Model):
     VENTA_ID = models.AutoField(primary_key=True)
-    FECHA = models.DateTimeField(default=datetime.now, blank=True)
+    FECHA = models.DateField(default=date.today(), blank=True)
+    HORA = models.TimeField(default=datetime.now().time(), blank=True)
     TIPO_PAGO = models.ForeignKey(TipoPago, on_delete=models.CASCADE)
     VENDEDOR = models.CharField(max_length=50)
     TOTAL_A_PAGAR = models.IntegerField(default=0)
@@ -26,7 +27,7 @@ class VENTA(models.Model):
         self.save()
 
     def __str__(self):
-        return "N°"+str(self.VENTA_ID)+' '+str(self.FECHA)
+        return 'N° '+str(self.VENTA_ID)+' '+str(self.FECHA)+' '+str(self.HORA)
 
 class DETALLE(models.Model):
     NUMERO_DE_VENTA = models.ForeignKey(VENTA, on_delete=models.CASCADE)

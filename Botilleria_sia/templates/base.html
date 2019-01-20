@@ -16,7 +16,7 @@
 <body><div class="parallax">
     <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="https://datatables.net/download/build/nightly/jquery.dataTables.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191930;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,9 +31,14 @@
                     <a class="nav-link" href="/inventario">Inventario</a>
                     <div class="dropdown-content">
                         <a href="/inventario/productos/nuevoprod">Nuevos</a>
+                        <a href="/inventario/productos/nuevoprod">Productos nuevos</a>
                         <a href="/inventario/productos">Productos</a>
                         <a href="/inventario/productos/stock/">Stock</a>
                         <a href="/inventario/pedidos/">Bodega</a>
+                        <!--<a href="/inventario/productos/stock/">Stock</a>-->
+                        <a href="/inventario/pedidos/">Pedidos</a>
+                        <a href="/inventario/tipoformato">Nuevo formato</a>
+                        <a href="/inventario/proveedor">Nuevo proveedor</a>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -55,7 +60,7 @@
             </form>
         </div>
     </nav>
-    <div class="content container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-8" style="background-color: #ffffff; margin: auto;">
                 {% block content %}

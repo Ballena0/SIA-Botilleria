@@ -2,19 +2,118 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from datetime import datetime
 from .models import DETALLE, VENTA, TipoPago
-from .forms import VentaForm, DetalleForm
+from .forms import VentaForm, DetalleForm, VentaFechaForm
+import json
 
+# Página principal de ventas
 def index(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     nompag = 'Ventas'
+    month = datetime.now().month
+    if month == 1 or month == 3 or month == 4 or month == 7 or month == 8 or month == 10 or month == 12:
+        dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == datetime.now().year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    elif month == 4 or month == 6 or month == 9 or month == 11:
+        dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == datetime.now().year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    else:
+        if venta.FECHA.year%4 == 0 and venta.FECHA.year%100 != 0 and venta.FECHA.year%400 == 0:
+            dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+        elif venta.FECHA.year%4 != 0:
+            dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == datetime.now().year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    dias = json.dumps(dias)
+    numventas = json.dumps(numventas)
     return render(request, 'ventas/index.html', locals())
 
 # Todas las ventas
 def ventas(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
-    return render(request, 'ventas/index.html', {'ventas': ventas})
+    nompag = 'Todas las ventas'
+    return render(request, 'ventas/ventas.html', locals())
 
-# Lista de meses
+# Ventas por rango de fecha
+def daterange(request):
+    if request.method == "POST":
+        form = VentaFechaForm(request.POST)
+        if form.is_valid():
+            start_date = form.cleaned_data['Fecha_inicial']
+            end_date = form.cleaned_data['Fecha_final']
+            ventas = VENTA.objects.filter(FECHA__range=[start_date, end_date])
+            if ventas:
+                rec = 0
+                for venta in ventas:
+                    if venta.ESTADO:
+                        rec = rec + venta.TOTAL_A_PAGAR
+            else:
+                error = True
+                form = VentaFechaForm()
+    else:
+        form = VentaFechaForm()
+    nompag = 'Ventas por rango de fecha'
+    return render(request, 'ventas/daterange.html', locals())
+
+
+# Ventas por días
+def ventas_day(request):
+    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
+    years = []
+    for venta in ventas:
+        if venta.FECHA.year not in years:
+            years.append(venta.FECHA.year)
+    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    treintayuno = range(1, 32)
+    treinta = range(1, 31)
+    veintiocho = range(1, 29)
+    veintinueve = range(1, 30)
+    hoy = datetime.today()
+    nompag = 'Ventas por día'
+    return render(request, 'ventas/ventas_day.html', locals())
+
+# Ventas por día
+def venta_day(request, year, month, day):
+    ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month, FECHA__day=day).order_by('-FECHA')
+    year = year
+    month = month
+    day = day
+    rec = 0
+    for venta in ventas:
+        if venta.ESTADO:
+            rec = rec + venta.TOTAL_A_PAGAR
+    nompag = 'Ventas por día'
+    return render(request, 'ventas/venta_day.html', locals())
+
+# Lista de monthes
 def ventas_month(request):
     ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
     years = []
@@ -22,15 +121,65 @@ def ventas_month(request):
         if venta.FECHA.year not in years:
             years.append(venta.FECHA.year)
     months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    nompag = 'Ventas por mes'
+    nompag = 'Ventas por month'
     return render(request, 'ventas/ventas_month.html', locals())
 
-# Ventas por meses
+# Ventas por monthes
 def venta_month(request, year, month):
     ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month).order_by('-FECHA')
     year = year
     month = month
+    rec = 0
+    for venta in ventas:
+        if venta.ESTADO:
+            rec = rec + venta.TOTAL_A_PAGAR
     nompag = 'Ventas por mes'
+    if month == 1 or month == 3 or month == 4 or month == 7 or month == 8 or month == 10 or month == 12:
+        dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+                29, 30, 31]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    elif month == 4 or month == 6 or month == 9 or month == 11:
+        dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,
+                29, 30]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == datetime.now().year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    else:
+        if venta.FECHA.year % 4 == 0 and venta.FECHA.year % 100 != 0 and venta.FECHA.year % 400 == 0:
+            dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+        elif venta.FECHA.year % 4 != 0:
+            dias = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+        numventas = []
+        ingresos = []
+        for dia in dias:
+            count = 0
+            ingr = 0
+            for venta in ventas:
+                if venta.FECHA.year == datetime.now().year and venta.FECHA.month == month and venta.FECHA.day == dia and venta.ESTADO == True:
+                    ingr = ingr + venta.TOTAL_A_PAGAR
+                    count = count + 1
+            numventas.append(count)
+            ingresos.append(ingr)
+    dias = json.dumps(dias)
+    numventas = json.dumps(numventas)
     return render(request, 'ventas/venta_month.html', locals())
 
 # Lista de años
@@ -47,6 +196,10 @@ def ventas_year(request):
 def venta_year(request, year):
     ventas = VENTA.objects.filter(FECHA__year=year).order_by('-FECHA')
     year = year
+    rec = 0
+    for venta in ventas:
+        if venta.ESTADO:
+            rec = rec + venta.TOTAL_A_PAGAR
     nompag = 'Ventas por año'
     return render(request, 'ventas/venta_year.html', locals())
 
@@ -77,7 +230,10 @@ def venta_new(request):
         form = VentaForm(request.POST)
         if form.is_valid():
             venta = form.save(commit=False)
-            venta.VENDEDOR = request.user
+            if request.user.first_name and request.user.last_name:
+                venta.VENDEDOR = request.user.first_name + ' ' + request.user.last_name
+            else:
+                venta.VENDEDOR = request.user
             venta.FECHA = datetime.now()
             venta.save()
             return redirect('venta_detail', pk=venta.pk)
@@ -94,9 +250,15 @@ def detalle_new(request, pk):
         if form.is_valid():
             detalle = form.save(commit=False)
             detalle.NUMERO_DE_VENTA = VENTA.objects.get(VENTA_ID=pk)
-            detalle.totald()
-            detalle.save()
-            return redirect('venta_detail', pk=detalle.NUMERO_DE_VENTA.VENTA_ID)
+            if detalle.PRODUCTO.STOCK >= detalle.CANTIDAD:
+                detalle.totald()
+                detalle.save()
+                return redirect('venta_detail', pk=detalle.NUMERO_DE_VENTA.VENTA_ID)
+            else:
+                error = True
+                producto = detalle.PRODUCTO
+                stock = detalle.PRODUCTO.STOCK
+                form = DetalleForm()
     else:
         form = DetalleForm()
     nompag = 'Añadir producto'

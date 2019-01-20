@@ -10,6 +10,7 @@
     <ul>
         <li>Total a pagar: ${{ venta.TOTAL_A_PAGAR }}</li>
         <li>Atendido por: {{ venta.VENDEDOR }}</li>
+        <li>Hora: {{ venta.HORA }}</li>
         <li>Método de pago: {{ venta.TIPO_PAGO }}</li>
         <li>Estado: {% if venta.ESTADO == True %} <verde>Pago realizado</verde> {% else %} <rojo>Pago no realizado</rojo> {% endif %} </li>
     </ul>
