@@ -17,6 +17,7 @@
     <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script src="https://datatables.net/download/build/nightly/jquery.dataTables.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    {% if user.is_authenticated %}
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #191930;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,11 +51,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Usuarios</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bye">Cerrar sesion</a>
+
+                </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <!--<form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Ingrese búsqueda" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+            </form>-->
         </div>
     </nav>
     <div class="container-fluid">
@@ -72,5 +77,10 @@
         Sangre x sangre waton bairon (TM) 2099<br />
         Send nudes: <a href="mailto:mariam.maldonado.marin@gmail.com">here<3</a>
     </footer>
+    {% else %}
+        <p>No has iniciado sesion</p>
+        <a href="/">Iniciar sesion</a>
+    {% endif %}
+
 </div></body>
 </html>
