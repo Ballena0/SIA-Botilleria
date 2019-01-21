@@ -7,30 +7,25 @@ class PedidoForm(forms.ModelForm):
         model = Pedido
         fields = ('PROVEEDOR',)
 
-
 class IngresoForm(forms.ModelForm):
     class Meta:
         model = IngresoProducto
         fields = ('PRODUCTO', 'CANTIDAD',)
-
 
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = PRODUCTO
         fields = ('FORMAT_PROD', 'NOMBRE_PROD', 'PRECIO',)
 
-
 class NewProductoForm(forms.ModelForm):
     class Meta:
         model = PRODUCTO
         fields = ('FORMAT_PROD', 'NOMBRE_PROD', 'PRECIO',)
 
-
 class EditProductoForm(forms.ModelForm):
     class Meta:
         model = PRODUCTO
         fields = ('PRECIO',)
-
 
 class NuevoFormatoForm(forms.ModelForm):
     class Meta:

@@ -16,7 +16,7 @@ def productos(request):
     nompag = 'Productos'
     return render(request, 'inventario/productos.html', locals())
 
-#Nuevo producto
+# Nuevo producto
 def new_producto(request):
     if request.method == 'POST':
         form = NewProductoForm(request.POST)
@@ -24,6 +24,8 @@ def new_producto(request):
             nuevo = form.save(commit=False)
             nuevo.save()
             return redirect('productos')
+    else:
+        form = NewProductoForm()
     nompag = "Productos nuevos"
     return render(request, 'inventario/new_producto.html', locals())
 
@@ -126,6 +128,8 @@ def precio_edit(request, pk):
             producto = form.save(commit=False)
             form.save()
             return redirect('productos')
+    else:
+        form = EditProductoForm()
     return render(request, 'inventario/edit_producto.html', locals())
 
 # Añadir un ingreso de producto
