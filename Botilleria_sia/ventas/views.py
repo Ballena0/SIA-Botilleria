@@ -150,7 +150,7 @@ def ventas_month(request):
         if venta.FECHA.year not in years:
             years.append(venta.FECHA.year)
     months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    nompag = 'Ventas por month'
+    nompag = 'Ventas por mes'
     return render(request, 'ventas/ventas_month.html', locals())
 
 # Ventas por meses
