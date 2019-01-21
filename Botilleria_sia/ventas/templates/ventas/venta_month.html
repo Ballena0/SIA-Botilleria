@@ -34,8 +34,10 @@
     } );
     </script>
     <h5>Estadísticas del mes</h5>
+    <h6>Número de ventas</h6>
     <canvas id="chartventas" width="100%" height="50%"></canvas>
-    <p class="font-weight-bold">La recaudación de este periodo de tiempo corresponde a: <verde>${{ rec }}</verde></p>
+    <h6>Ingresos</h6>
+    <p class="font-weight-bold">La recaudación de este mes corresponde a: <verde>${{ rec }}</verde></p>
     <canvas id="chartingresos" width="100%" height="50%"></canvas>
     <script>
         var dias = JSON.parse("{{ dias }}");

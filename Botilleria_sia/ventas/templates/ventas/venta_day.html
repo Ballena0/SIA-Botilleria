@@ -26,33 +26,15 @@
     </table>
     <script type="text/javascript">
     $(document).ready(function() {
-        $('#vday').dataTable( {
+        $('#vaño').dataTable( {
             language: {
-<<<<<<< HEAD
                 'url': '//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
-=======
-                loadingRecords: "Cargando...",
-                lengthMenu: "Mostrar _MENU_ elementos",
-                info: "Mostrando de _START_ a _END_ de un total de _TOTAL_ elementos",
-                infoEmpty: "Mostrando 0 a 0 de un total de 0 elementos",
-                infoFiltered: "(filtrado de _MAX_ elementos en total)",
-                paginate: {
-                    first:      "Primero",
-                    previous:   "Anterior",
-                    next:       "Siguiente",
-                    last:       "Último"
-                },
-                zeroRecords: "No se han encontrado resultados",
-                search: "Buscar&nbsp;:",
->>>>>>> 9430a9ac354003f414087756a34bfaeac1e63c35
             }
         } );
     } );
     </script>
-<<<<<<< HEAD
+    <h5>Estadísticas del mes</h5>
     <p class="font-weight-bold">La recaudación de este día corresponde a: <verde>${{ rec }}</verde></p>
-=======
->>>>>>> 9430a9ac354003f414087756a34bfaeac1e63c35
 {% else %}
     <p>No hay ventas registradas para este día.</p>
 {% endif %}

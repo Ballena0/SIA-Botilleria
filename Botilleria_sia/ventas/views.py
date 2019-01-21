@@ -135,6 +135,10 @@ def venta_day(request, year, month, day):
     year = year
     month = month
     day = day
+    rec = 0
+    for venta in ventas:
+        if venta.ESTADO:
+            rec = rec + venta.TOTAL_A_PAGAR
     nompag = 'Ventas por día'
     return render(request, 'ventas/venta_day.html', locals())
 
@@ -220,12 +224,25 @@ def ventas_year(request):
 # Ventas por años
 def venta_year(request, year):
     ventas = VENTA.objects.filter(FECHA__year=year).order_by('-FECHA')
+    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     year = year
     rec = 0
     for venta in ventas:
         if venta.ESTADO:
             rec = rec + venta.TOTAL_A_PAGAR
+    numventas = []
+    ingresos = []
+    for month in months:
+        count = 0
+        ingr = 0
+        for venta in ventas:
+            if venta.FECHA.year == year and venta.FECHA.month == month and venta.ESTADO == True:
+                ingr = ingr + venta.TOTAL_A_PAGAR
+                count = count + 1
+        numventas.append(count)
+        ingresos.append(ingr)
     nompag = 'Ventas por año'
+    numventas = json.dumps(numventas)
     return render(request, 'ventas/venta_year.html', locals())
 
 # Muestra una venta y sus detalles
