@@ -37,6 +37,8 @@ def tipo_formato(request):
             hola = form.save(commit=False)
             hola.save()
             return redirect('productos')
+    else:
+        form = NuevoFormatoForm()
     nompag = "Nuevo formato"
     return render(request,'inventario/tipoformato.html', locals())
 
@@ -120,6 +122,7 @@ def producto_delete(request, pk):
     nompag = 'Eliminar producto'
     return render(request, 'inventario/producto_delete.html', locals())
 
+#Editar precio de un producto existente
 def precio_edit(request, pk):
     producto = get_object_or_404(PRODUCTO, pk=pk)
     if request.method == 'POST':
@@ -180,6 +183,8 @@ def prov_new(request):
             prov = form.save(commit=False)
             prov.save()
             return redirect('productos')
+    else:
+        form = NuevoProveedorForm()
     nompag = " Nuevo proveedor"
     return render(request, 'inventario/new_proveedor.html', locals())
 
