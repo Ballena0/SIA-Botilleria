@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login | Punto de partida</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/loginstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body>
+<div class="parallax">
+    <div class="card" style="width: 18rem; position: absolute; left: 39%;">
+        <img class="card-img-top" src="/static/img/pp.png" >
+        <div class="card-body">
+            <form method="post" class="login">{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+                <button type="button" class="btn btn-primary" onclick="/">Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>

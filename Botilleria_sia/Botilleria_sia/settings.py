@@ -69,6 +69,8 @@ TEMPLATES = [
     },
 ]
 
+LOGIN_REDIRECT_URL = '/inventario'
+
 WSGI_APPLICATION = 'Botilleria_sia.wsgi.application'
 
 
