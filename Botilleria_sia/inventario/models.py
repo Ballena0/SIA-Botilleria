@@ -52,11 +52,6 @@ class IngresoProducto(models.Model):
 
     def stockp(self):
         producto = self.PRODUCTO
-        if (self.CANTIDAD%2 == 0):
-            self.CANTIDAD = self.CANTIDAD/2
-        else:
-            self.CANTIDAD = self.CANTIDAD/2 + 1
-
         producto.STOCK = producto.STOCK + self.CANTIDAD
         producto.save()
 

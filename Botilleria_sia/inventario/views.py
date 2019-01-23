@@ -97,7 +97,7 @@ def pedido_ingresado(request, pk):
     pedido.estado()
     for ingreso in ingresos:
         if ingreso.ESTADO == False:
-            ingreso.stockp()
+            #ingreso.stockp()
             ingreso.ESTADO = True
             ingreso.save()
     nompag = 'Pedido N° ' + str(pedido.PEDIDO_ID)
