@@ -7,8 +7,8 @@ from django.http import HttpResponse
 from .models import PRODUCTO, PROVEEDOR
 
 def index(request):
-    context = {}
-    return render(request, 'base.html', context)
+    nompag = 'Inventario'
+    return render(request, 'inventario/index.html', locals())
 
 #Lista de productos existentes
 def productos(request):
