@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from datetime import datetime
 from .models import DETALLE, VENTA, TipoPago
-from .forms import VentaForm, DetalleForm, VentaFechaForm
+from .forms import VentaForm, DetalleForm, VentaFechaForm, VentaDayForm
 import json
 
 # Página principal de ventas
@@ -86,21 +86,29 @@ def daterange(request):
 
 # Ventas por días
 def ventas_day(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
-    years = []
-    for venta in ventas:
-        if venta.FECHA.year not in years:
-            years.append(venta.FECHA.year)
-    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    treintayuno = range(1, 32)
-    treinta = range(1, 31)
-    veintiocho = range(1, 29)
-    veintinueve = range(1, 30)
-    hoy = datetime.today()
+    if request.method == "POST":
+        form = VentaDayForm(request.POST)
+        if form.is_valid():
+            fecha = form.cleaned_data['Fecha']
+            ventas = VENTA.objects.filter(FECHA=fecha)
+            if ventas:
+                rec = 0
+                for venta in ventas:
+                    year = venta.FECHA.year
+                    month = venta.FECHA.month
+                    day = venta.FECHA.day
+                    if venta.ESTADO:
+                        rec = rec + venta.TOTAL_A_PAGAR
+                return redirect('venta_day', year, month, day)
+            else:
+                error = True
+                form = VentaDayForm()
+    else:
+        form = VentaDayForm()
     nompag = 'Ventas por día'
     return render(request, 'ventas/ventas_day.html', locals())
 
-# Ventas por día
+# Escoger fecha para venta por día
 def venta_day(request, year, month, day):
     ventas = VENTA.objects.filter(FECHA__year=year, FECHA__month=month, FECHA__day=day).order_by('-FECHA')
     year = year
@@ -112,22 +120,6 @@ def venta_day(request, year, month, day):
             rec = rec + venta.TOTAL_A_PAGAR
     nompag = 'Ventas por día'
     return render(request, 'ventas/venta_day.html', locals())
-
-# Ventas por días
-def ventas_day(request):
-    ventas = VENTA.objects.filter(FECHA__lte=datetime.now()).order_by('-FECHA')
-    years = []
-    for venta in ventas:
-        if venta.FECHA.year not in years:
-            years.append(venta.FECHA.year)
-    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    treintayuno = range(1, 32)
-    treinta = range(1, 31)
-    veintiocho = range(1, 29)
-    veintinueve = range(1, 30)
-    hoy = datetime.today()
-    nompag = 'Ventas por día'
-    return render(request, 'ventas/ventas_day.html', locals())
 
 # Ventas por día
 def venta_day(request, year, month, day):

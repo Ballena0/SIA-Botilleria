@@ -24,3 +24,5 @@ class VentaFechaForm(forms.Form):
     Fecha_inicial = forms.DateField(widget=forms.SelectDateWidget(years=range(1990, date.today().year+10)), initial=date.today())
     Fecha_final = forms.DateField(widget=forms.SelectDateWidget(years=range(1990, date.today().year+10)), initial=date.today())
 
+class VentaDayForm(forms.Form):
+    Fecha = forms.DateField(widget=forms.SelectDateWidget(years=range(1990, date.today().year+10)), initial=date.today())
