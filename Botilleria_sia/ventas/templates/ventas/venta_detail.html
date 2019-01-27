@@ -20,7 +20,17 @@
 </div>
 <h4><a>Detalle de productos</a></h4>
 {% if venta.ESTADO == False %}
-    <p><a type="button" class="btn btn-primary btn-sm" href="{% url 'detalle_new' pk=venta.pk %}">+ Añadir producto</a></p>
+    {% if error %}
+    <div class="alert alert-warning" role="alert">
+        La cantidad ingresada supera al stock del producto en bodega. Actualmente sólo hay {{ stock }} unidades de {{ producto }}.
+    </div>
+    {% endif %}
+    <div class="container"><div class="row"><form method="POST" class="detalle-form">{% csrf_token %}
+        {% for field in form  %}
+            {{ field }}
+        {% endfor %}
+        <button type="submit" class="btn btn-outline-success btn-sm">Aceptar</button>
+    </form></div></div>
 {% endif %}
 {% if detalles %}
     <table class="tabled" style="width:80%" align="left">

@@ -6,6 +6,7 @@
         No hay ventas registradas para ese día. Por favor ingrese otra fecha.
     </div>
 {% endif %}
+<a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_day' year=hoy.year month=hoy.month day=hoy.day %}">Ventas del día de hoy</a>
 <p>Seleccione una fecha para mostrar las ventas registradas en dicho día.</p>
 <form method="POST" class="fecha-form">{% csrf_token %}
     {{ form.as_p }}

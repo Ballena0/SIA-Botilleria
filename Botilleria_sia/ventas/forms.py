@@ -16,8 +16,8 @@ class DetalleForm(forms.ModelForm):
         model = DETALLE
         fields = ('PRODUCTO', 'CANTIDAD',)
         labels = {
-            'PRODUCTO':'Producto',
-            'CANTIDAD':'Cantidad',
+            'PRODUCTO':'',
+            'CANTIDAD':'',
         }
 
 class VentaFechaForm(forms.Form):

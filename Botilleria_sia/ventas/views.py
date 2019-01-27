@@ -87,6 +87,7 @@ def daterange(request):
 
 # Ventas por días
 def ventas_day(request):
+    hoy = datetime.today()
     if request.method == "POST":
         form = VentaDayForm(request.POST)
         if form.is_valid():
@@ -243,6 +244,22 @@ def venta_detail(request, pk):
     venta = get_object_or_404(VENTA, pk=pk)
     detalles = DETALLE.objects.filter(NUMERO_DE_VENTA=venta.VENTA_ID)
     nompag = 'Venta N° '+str(venta.VENTA_ID)
+    if request.method == "POST":
+        form = DetalleForm(request.POST)
+        if form.is_valid():
+            detalle = form.save(commit=False)
+            detalle.NUMERO_DE_VENTA = VENTA.objects.get(VENTA_ID=pk)
+            if detalle.PRODUCTO.STOCK >= detalle.CANTIDAD:
+                detalle.totald()
+                detalle.save()
+                return redirect('venta_detail', pk=detalle.NUMERO_DE_VENTA.VENTA_ID)
+            else:
+                error = True
+                producto = detalle.PRODUCTO
+                stock = detalle.PRODUCTO.STOCK
+                form = DetalleForm()
+    else:
+        form = DetalleForm()
     venta.totalv()
     return render(request, 'ventas/venta_detail.html', locals())
 
@@ -355,6 +372,6 @@ def base_layout(request):
     return render(request, template)
 
 def getdata(request):
-    results = VENTA.objects.all()
-    jsondata = serializers.serialize('json', results)
-    return HttpResponse(jsondata)
+ results=feed.objects.all()
+ jsondata = serializers.serialize('json',results)
+ return HttpResponse(jsondata)
