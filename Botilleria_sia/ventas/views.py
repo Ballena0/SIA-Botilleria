@@ -4,6 +4,7 @@ from datetime import datetime
 from .models import DETALLE, VENTA, TipoPago
 from .forms import VentaForm, DetalleForm, VentaFechaForm, VentaDayForm
 import json
+from django.core import serializers
 
 # Página principal de ventas
 def index(request):
@@ -347,3 +348,13 @@ def venta_delete(request, pk):
     nompag = 'Eliminar venta'
 
     return render(request, 'ventas/venta_delete.html', locals())
+
+# PWA
+def base_layout(request):
+    template = 'ventas/base.html'
+    return render(request, template)
+
+def getdata(request):
+    results = VENTA.objects.all()
+    jsondata = serializers.serialize('json', results)
+    return HttpResponse(jsondata)
