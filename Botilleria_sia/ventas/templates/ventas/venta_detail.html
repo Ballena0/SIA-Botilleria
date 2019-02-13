@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1><a>Ventas</a></h1>
-<div class="venta">
+<div class="venta" id="ventad">
     <h3>Venta N°{{ venta.VENTA_ID }} | Fecha: {{ venta.FECHA }}</h3>
     {% if venta.ESTADO == False %}
     <a type="button" class="btn btn-success btn-sm" href="{% url 'venta_edit' pk=venta.pk %}">Editar</a>
@@ -15,7 +15,7 @@
         <li>Estado: {% if venta.ESTADO == True %} <verde>Pago realizado</verde> {% else %} <rojo>Pago no realizado</rojo> {% endif %} </li>
     </ul>
     {% if venta.ESTADO == False %}
-    <p><a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_pago' pk=venta.pk %}">Confirmar pago</a></p>
+        <p><a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'venta_pago' pk=venta.pk %}">Confirmar pago</a></p>
     {% endif %}
 </div>
 <h4><a>Detalle de productos</a></h4>
@@ -25,7 +25,7 @@
         La cantidad ingresada supera al stock del producto en bodega. Actualmente sólo hay {{ stock }} unidades de {{ producto }}.
     </div>
     {% endif %}
-    <div class="container"><div class="row"><form method="POST" class="detalle-form">{% csrf_token %}
+    <div class="container"><div class="row"><form method="POST" class="detalle-form" id="detalle">{% csrf_token %}
         {% for field in form  %}
             {{ field }}
         {% endfor %}
@@ -60,4 +60,5 @@
 {% else %}
     <p>No hay productos actualmente ingresados en esta venta.</p>
 {% endif %}
+<script>var idventa = JSON.parse("{{ idvent }}");</script>
 {% endblock %}

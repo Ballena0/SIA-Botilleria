@@ -88,11 +88,14 @@ WSGI_APPLICATION = 'Botilleria_sia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': '/etc/mysql/my.cnf',
-        },
+        'NAME': 'PUNTO_PARTIDA',
+        'HOST':'',
+        'PORT': '',
+        'USER':'user',
+        'PASSWORD':'password',
     }
 }
+
 
 
 # Password validation
@@ -136,5 +139,3 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 ]
-
-# Activate Django-Heroku.

@@ -6,10 +6,7 @@ from .models import VENTA, DETALLE
 class VentaForm(forms.ModelForm):
     class Meta:
         model = VENTA
-        fields = ('TIPO_PAGO',)
-        labels = {
-            'TIPO_PAGO':'Tipo de pago',
-        }
+        fields = ('TIPO_PAGO', 'ESTADO')
 
 class DetalleForm(forms.ModelForm):
     class Meta:

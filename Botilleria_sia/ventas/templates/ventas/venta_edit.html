@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Ingresar venta</h1>
-<form method="POST" class="venta-form">{% csrf_token %}
-    {{ form.as_p }}
+<form method="POST" class="venta-form" id="venta">{% csrf_token %}
+    <div class="fieldWrapper">
+        {{ form.TIPO_PAGO.errors }}
+        <label>Tipo de pago:</label>
+        {{ form.TIPO_PAGO }}
+    </div>
     <button type="submit" class="btn btn-outline-success btn-sm">Aceptar</button>
     <button type="button" class="btn btn-outline-danger btn-sm" onclick="window.history.back()">Cancelar</button>
 </form>
