@@ -15,7 +15,3 @@ python3 manage.py migrate
 ```
 #### Run
 ``` python3 manage.py runserver```
-
-## Developed by 
-@Ballena0   
-@mariam6697
